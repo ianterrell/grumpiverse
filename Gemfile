@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.0.rc'
 
 gem 'mysql', '2.8.1'
+gem 'devise', '1.1.rc2'
 
 gem 'paperclip', :git => 'http://github.com/thoughtbot/paperclip.git'
 gem 'aws-s3'

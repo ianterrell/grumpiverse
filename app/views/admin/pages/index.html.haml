@@ -1,0 +1,19 @@
+- if @pages.empty?
+  %p
+    There are no pages here!
+- else
+  %table
+    %tr
+      %th Title
+      %th Slug
+      %th Actions
+    - @pages.each do |page|
+      %tr
+        %td= link_to page.title, admin_page_path(page)
+        %td= page.path
+        %td
+          = link_to "Edit", edit_admin_page_path(page)
+          = link_to "Delete", admin_page_path(page), :method => :delete, :confirm => "Are you sure you wish to delete this page? This cannot be undone."
+
+- content_for :sidebar do
+  = link_to "Add Page", new_admin_page_path, :class => "add"

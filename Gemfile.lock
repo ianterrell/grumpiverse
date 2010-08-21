@@ -54,7 +54,11 @@ GEM
       builder
       mime-types
       xml-simple
+    bcrypt-ruby (2.1.2)
     builder (2.1.2)
+    devise (1.1.rc2)
+      bcrypt-ruby (~> 2.1.2)
+      warden (~> 0.10.7)
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -109,6 +113,8 @@ GEM
     treetop (1.4.8)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
+    warden (0.10.7)
+      rack (>= 1.0.0)
     webrat (0.7.2.beta.1)
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
@@ -120,6 +126,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-s3
+  devise (= 1.1.rc2)
   factory_girl!
   haml
   inherited_resources (= 1.1.2)

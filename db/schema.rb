@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100820192650) do
+ActiveRecord::Schema.define(:version => 20100820232440) do
 
   create_table "articles", :force => true do |t|
     t.integer  "author_id"
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(:version => 20100820192650) do
     t.datetime "updated_at"
   end
 
+  create_table "pages", :force => true do |t|
+    t.string   "title"
+    t.string   "slug"
+    t.string   "keywords"
+    t.string   "description"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "tweets", :force => true do |t|
     t.integer  "character_id"
     t.string   "tweet"
@@ -45,5 +55,17 @@ ActiveRecord::Schema.define(:version => 20100820192650) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "email",                              :default => "", :null => false
+    t.string   "encrypted_password",  :limit => 128, :default => "", :null => false
+    t.string   "password_salt",                      :default => "", :null => false
+    t.string   "remember_token"
+    t.datetime "remember_created_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
 end

@@ -1,0 +1,85 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head{:profile => "http://gmpg.org/xfn/11"}
+    %title
+      Grumpiverse :: All Things Grumpy
+    / TODO Add a favicon to the repo
+    %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:name => "description", :content => "Post little pictures of some very grumpy individuals on a sad friend's wall to cheer them up!"}
+    %meta{:name => "keywords", :content => "grumpygrams, grumpygram, grumpiverse, grumpy, ecard, egram, gram"}
+    / TODO:  Use AssetPackager or Jammit to concat into one CSS file?
+    = stylesheet_link_tag "style", "grumpy"
+    / TODO:  Implement RSS and integrate with Feedburner
+    %link{:href => "http://www.grumpiverse.com/feed", :rel => "alternate", :title => "RSS 2.0", :type => "application/rss+xml"}/
+    /[if IE 6]
+      = javascript_include_tag "pngfix"
+      = stylesheet_link_tag "ie6"
+    %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", :type => "text/javascript"}
+    %script{:src => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.3/jquery-ui.min.js", :type => "text/javascript"}
+    %link{:href => "http://www.grumpiverse.com", :rel => "index", :title => "Grumpiverse"}/
+    %link{:href => "http://www.grumpiverse.com/wp-content/themes/groovyblog/styles/default.css", :rel => "stylesheet", :type => "text/css"}/
+    = csrf_meta_tag
+  %body
+    #wrap
+      #top
+        / Page Nav Starts
+        #top-nav.wrap
+          .fl
+            %ul#nav
+              %li{:class => "page_item #{'current_page_item' if controller_name == "articles"}"}
+                = link_to "Articles", admin_articles_path
+              %li{:class => "page_item #{'current_page_item' if controller_name == "characters"}"}
+                = link_to "Characters", admin_characters_path
+              %li{:class => "page_item #{'current_page_item' if controller_name == "tweets"}"}
+                = link_to "Tweets", admin_tweets_path
+              %li{:class => "page_item #{'current_page_item' if controller_name == "grams"}"}
+                = link_to "Grams", admin_grams_path
+        / Page Nav Ends
+        #header
+          %h1
+            %span.the 
+              - if action_name == "index"
+                = controller_name.titleize
+              - else
+                = link_to self.send(:"admin_#{controller_name}_path") do
+                  = controller_name.titleize
+                &raquo;
+                - if action_name == "new"
+                  New
+                - elsif action_name == "show"
+                  = instance_variable_get("@#{controller_name.singularize}").name
+                - elsif action_name == "edit"
+                  = link_to self.send(:"admin_#{controller_name}_path") do
+                    = instance_variable_get("@#{controller_name.singularize}").name
+                  &raquo; Edit
+        .clear
+      / Content Starts
+      #content.home.wrap.admin
+        .col-left
+          #main.single
+            / Post Starts
+            .box3-top
+            .post.wrap
+              = yield
+        #sidebar.col-right
+          = yield(:sidebar)
+      / Content Ends
+      / bottom Starts
+      #bottom-tile
+      #bottom-out
+        #bottom.wrap
+          #features-top
+          / End features-top
+        / bottom-out Ends
+      / bottom Ends
+      / footer Starts
+      #footer-out
+        #footer.wrap
+          .col-left
+            %p © 2008 Grumpiverse. All Rights Reserved.
+          .col-right
+            %p
+              %a{:href => "http://woothemes.com"}
+                %img{:height => "26", :src => "http://www.grumpiverse.com/wp-content/themes/groovyblog/images/woothemes.png", :width => "87"}/
+      / footer Ends
