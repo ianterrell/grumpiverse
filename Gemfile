@@ -10,8 +10,11 @@ gem 'aws-s3'
 
 gem 'simple_form'
 gem 'inherited_resources', '1.1.2'
+gem 'friendly_id', '~> 3.0'
 gem "haml"
 gem "rails3-generators", :group => :development
+
+gem "RedCloth"
 
 # Use unicorn as the web server
 # gem 'unicorn'

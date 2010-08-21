@@ -1,0 +1,7 @@
+= form_for [:admin, @character] do |f|
+  = render :partial => "/admin/characters/form", :locals => { :f => f }
+  = f.submit
+  = link_to "Cancel", admin_characters_path
+
+- content_for :sidebar do
+  = link_to "Back", admin_characters_path, :class => "back"

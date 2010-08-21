@@ -1,0 +1,23 @@
+- if @tweets.empty?
+  %p
+    There are no tweets here!
+- else
+  %table
+    %tr
+      %th Title
+      %th Slug
+      %th Modified
+      %th Actions
+    - @tweets.each do |tweet|
+      %tr
+        %td= link_to tweet.title, admin_tweet_path(tweet)
+        %td= tweet.slug
+        %td
+          = distance_of_time_in_words_to_now tweet.updated_at
+          ago
+        %td.actions
+          = link_to "Edit", edit_admin_tweet_path(tweet), :class => "edit"
+          = link_to "Delete", admin_tweet_path(tweet), :method => :delete, :confirm => "Are you sure you wish to delete this tweet? This cannot be undone.", :class => "delete"
+
+- content_for :sidebar do
+  = link_to "Add Tweet", new_admin_tweet_path, :class => "add"

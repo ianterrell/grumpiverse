@@ -1,0 +1,11 @@
+
+.admin a.back   { color: white; padding-left: 18px; background:transparent url(/images/icons/16x16/back.png)   0px 50% no-repeat; }
+.admin a.edit   { color: white; padding-left: 18px; background:transparent url(/images/icons/16x16/edit.png)   0px 50% no-repeat; }
+.admin a.add    { color: white; padding-left: 18px; background:transparent url(/images/icons/16x16/add.png)    0px 50% no-repeat; }
+.admin a.delete { color: white; padding-left: 18px; background:transparent url(/images/icons/16x16/delete.png) 0px 50% no-repeat; }
+
+.admin table { border: 1px solid rgba(0,0,0,0.3); border-collapse: collapse; width: 100%;}
+.admin table th { border: 1px solid rgba(0,0,0,0.3); background: rgba(0,0,0,0.2); padding: 5px; }
+.admin table tr { border: 1px solid rgba(0,0,0,0.3); }
+.admin table td { border: 1px solid rgba(0,0,0,0.3); padding: 5px;}
+.admin table td.actions { text-align: center; }

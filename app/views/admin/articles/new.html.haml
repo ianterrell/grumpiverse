@@ -1,0 +1,7 @@
+= form_for [:admin, @article] do |f|
+  = render :partial => "/admin/articles/form", :locals => { :f => f }
+  = f.submit
+  = link_to "Cancel", admin_articles_path
+
+- content_for :sidebar do
+  = link_to "Back", admin_articles_path, :class => "back"

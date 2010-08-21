@@ -1,0 +1,6 @@
+= @tweet.body.html_safe
+
+- content_for :sidebar do
+  = link_to "Back", admin_tweets_path, :class => "back"
+  = link_to "Edit", edit_admin_tweet_path(@tweet), :class => "edit"
+  = link_to "Delete", admin_tweet_path(@tweet), :method => :delete, :confirm => "Are you sure?", :class => "delete"

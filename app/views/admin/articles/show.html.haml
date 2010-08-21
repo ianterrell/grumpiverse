@@ -1,0 +1,6 @@
+= @article.body.html_safe
+
+- content_for :sidebar do
+  = link_to "Back", admin_articles_path, :class => "back"
+  = link_to "Edit", edit_admin_article_path(@article), :class => "edit"
+  = link_to "Delete", admin_article_path(@article), :method => :delete, :confirm => "Are you sure?", :class => "delete"

@@ -27,7 +27,3 @@ You need to use .custom before every style e.g.
 #header h1 span.the { font-size: 48px; }
 #header h1 a { color: white; }
 
-.admin a.back { color: white; padding-left: 18px; background:transparent url(/images/icons/16x16/back.png) 0px 50% no-repeat; }
-.admin a.edit { color: white; padding-left: 18px; background:transparent url(/images/icons/16x16/edit.png) 0px 50% no-repeat; }
-.admin a.add { color: white; padding-left: 18px; background:transparent url(/images/icons/16x16/add.png) 0px 50% no-repeat; }
-

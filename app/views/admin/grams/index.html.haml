@@ -1,0 +1,23 @@
+- if @grams.empty?
+  %p
+    There are no grams here!
+- else
+  %table
+    %tr
+      %th Title
+      %th Slug
+      %th Modified
+      %th Actions
+    - @grams.each do |gram|
+      %tr
+        %td= link_to gram.title, admin_gram_path(gram)
+        %td= gram.slug
+        %td
+          = distance_of_time_in_words_to_now gram.updated_at
+          ago
+        %td.actions
+          = link_to "Edit", edit_admin_gram_path(gram), :class => "edit"
+          = link_to "Delete", admin_gram_path(gram), :method => :delete, :confirm => "Are you sure you wish to delete this gram? This cannot be undone.", :class => "delete"
+
+- content_for :sidebar do
+  = link_to "Add Gram", new_admin_gram_path, :class => "add"

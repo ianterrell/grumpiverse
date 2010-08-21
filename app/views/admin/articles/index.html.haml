@@ -1,0 +1,23 @@
+- if @articles.empty?
+  %p
+    There are no articles here!
+- else
+  %table
+    %tr
+      %th Title
+      %th Slug
+      %th Modified
+      %th Actions
+    - @articles.each do |article|
+      %tr
+        %td= link_to article.title, admin_article_path(article)
+        %td= article.slug
+        %td
+          = distance_of_time_in_words_to_now article.updated_at
+          ago
+        %td.actions
+          = link_to "Edit", edit_admin_article_path(article), :class => "edit"
+          = link_to "Delete", admin_article_path(article), :method => :delete, :confirm => "Are you sure you wish to delete this article? This cannot be undone.", :class => "delete"
+
+- content_for :sidebar do
+  = link_to "Add Article", new_admin_article_path, :class => "add"

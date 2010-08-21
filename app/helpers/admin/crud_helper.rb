@@ -1,0 +1,2 @@
+module Admin::CrudHelper
+end

@@ -1,0 +1,6 @@
+= @character.render_description
+
+- content_for :sidebar do
+  = link_to "Back", admin_characters_path, :class => "back"
+  = link_to "Edit", edit_admin_character_path(@character), :class => "edit"
+  = link_to "Delete", admin_character_path(@character), :method => :delete, :confirm => "Are you sure?", :class => "delete"

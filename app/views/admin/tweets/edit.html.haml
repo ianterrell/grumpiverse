@@ -1,0 +1,7 @@
+= form_for [:admin, @tweet] do |f|
+  = render :partial => "/admin/tweets/form", :locals => { :f => f }
+  = f.submit
+  = link_to "Cancel", admin_tweet_path(@tweet)
+
+- content_for :sidebar do
+  = link_to "Back", admin_tweet_path(@tweet), :class => "back"

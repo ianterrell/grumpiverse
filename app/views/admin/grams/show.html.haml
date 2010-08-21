@@ -1,0 +1,6 @@
+= @gram.body.html_safe
+
+- content_for :sidebar do
+  = link_to "Back", admin_grams_path, :class => "back"
+  = link_to "Edit", edit_admin_gram_path(@gram), :class => "edit"
+  = link_to "Delete", admin_gram_path(@gram), :method => :delete, :confirm => "Are you sure?", :class => "delete"

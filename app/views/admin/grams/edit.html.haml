@@ -1,0 +1,7 @@
+= form_for [:admin, @gram] do |f|
+  = render :partial => "/admin/grams/form", :locals => { :f => f }
+  = f.submit
+  = link_to "Cancel", admin_gram_path(@gram)
+
+- content_for :sidebar do
+  = link_to "Back", admin_gram_path(@gram), :class => "back"

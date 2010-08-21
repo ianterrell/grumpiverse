@@ -1,0 +1,25 @@
+%div
+  = f.label :title
+  = f.text_field :title
+  = f.error_message_on :title
+
+%div
+  = f.label :slug
+  = f.text_field :slug
+  = f.error_message_on :slug
+
+%div
+  = f.label :keywords, "Keywords for SEO"
+  = f.text_field :keywords
+  = f.error_message_on :keywords
+
+%div
+  = f.label :description, "Description for SEO"
+  = f.text_area :description
+  = f.error_message_on :description
+
+%div
+  = f.label :body
+  = f.text_area :body
+  = f.error_message_on :body
+
