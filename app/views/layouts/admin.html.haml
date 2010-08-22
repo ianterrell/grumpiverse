@@ -36,8 +36,8 @@
                 = link_to "Characters", admin_characters_path
               %li{:class => "page_item #{'current_page_item' if controller_name == "tweets"}"}
                 = link_to "Tweets", admin_tweets_path
-              %li{:class => "page_item #{'current_page_item' if controller_name == "grams"}"}
-                = link_to "Grams", admin_grams_path
+              / %li{:class => "page_item #{'current_page_item' if controller_name == "grams"}"}
+              /   = link_to "Grams", admin_grams_path
         / Page Nav Ends
         #header
           %h1
