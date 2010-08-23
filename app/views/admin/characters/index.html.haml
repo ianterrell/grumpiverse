@@ -5,13 +5,11 @@
   %table
     %tr
       %th Title
-      %th Slug
       %th Modified
       %th Actions
     - @characters.each do |character|
       %tr
         %td= link_to character.name, admin_character_path(character)
-        %td= character.slug
         %td
           = distance_of_time_in_words_to_now character.updated_at
           ago
