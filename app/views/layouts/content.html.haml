@@ -1,0 +1,10 @@
+- content_for :body do
+  .col-left
+    #main.single
+      .box3-top
+      .post.wrap
+        = yield
+  #sidebar.col-right
+    = yield(:sidebar)
+     
+= render :file => 'layouts/application'

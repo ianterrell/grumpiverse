@@ -5,7 +5,7 @@ class Admin::ArticlesController < Admin::CrudController
   end
   
   def all
-    @articles = Article.all.paginate :page => params[:page]
+    @articles = Article.order("updated_at desc").paginate :page => params[:page]
   end
   
   def published

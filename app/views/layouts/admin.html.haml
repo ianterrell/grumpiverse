@@ -24,7 +24,6 @@
   %body
     #wrap
       #top
-        / Page Nav Starts
         #top-nav.wrap
           .fl
             %ul#nav
@@ -38,7 +37,6 @@
                 = link_to "Tweets", admin_tweets_path
               / %li{:class => "page_item #{'current_page_item' if controller_name == "grams"}"}
               /   = link_to "Grams", admin_grams_path
-        / Page Nav Ends
         #header
           = display_flash :notice, :alert
           %h1
@@ -59,26 +57,18 @@
                 - else
                   = action_name.titleize
         .clear
-      / Content Starts
       #content.home.wrap.admin
         .col-left
           #main.single
-            / Post Starts
             .box3-top
             .post.wrap
               = yield
         #sidebar.col-right
           = yield(:sidebar)
-      / Content Ends
-      / bottom Starts
       #bottom-tile
       #bottom-out
         #bottom.wrap
           #features-top
-          / End features-top
-        / bottom-out Ends
-      / bottom Ends
-      / footer Starts
       #footer-out
         #footer.wrap
           .col-left
@@ -87,4 +77,3 @@
             %p
               %a{:href => "http://woothemes.com"}
                 %img{:height => "26", :src => "http://www.grumpiverse.com/wp-content/themes/groovyblog/images/woothemes.png", :width => "87"}/
-      / footer Ends

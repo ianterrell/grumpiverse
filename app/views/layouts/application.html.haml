@@ -28,47 +28,34 @@
         #top-nav.wrap
           .fl
             %ul#nav
-              %li.page_item.current_page_item
-                %a{:href => "http://www.grumpiverse.com"} Home
-              %li.page_item.page-item-2
-                %a{:href => "http://www.grumpiverse.com/?page_id=2", :title => "Shop"} Shop
-              %li.page_item.page-item-5
-                %a{:href => "http://www.grumpiverse.com/?page_id=5", :title => "Cast"} Cast
+              %li{:class => "page_item #{'current_page_item' if controller_name == 'main' && action_name == 'index'}"}
+                = link_to "Home", root_path
+              %li.page_item
+                %a{:href => "#", :title => "Shop"} Shop
+              %li{:class => "page_item #{'current_page_item' if controller_name == 'characters' && action_name == 'index'}"}
+                = link_to "Cast", cast_path
                 %ul.children
-                  %li.page_item.page-item-7
-                    %a{:href => "http://www.grumpiverse.com/?page_id=7", :title => "Grumpalupagus"} Grumpalupagus
-                  %li.page_item.page-item-17
-                    %a{:href => "http://www.grumpiverse.com/?page_id=17", :title => "Donald Grump"} Donald Grump
-                  %li.page_item.page-item-19
-                    %a{:href => "http://www.grumpiverse.com/?page_id=19", :title => "Grumpty Dumpty"} Grumpty Dumpty
-                  %li.page_item.page-item-21
-                    %a{:href => "http://www.grumpiverse.com/?page_id=21", :title => "The Incredible Sulk"} The Incredible Sulk
-                  %li.page_item.page-item-23
-                    %a{:href => "http://www.grumpiverse.com/?page_id=23", :title => "Grumpkin Pie"} Grumpkin Pie
-                  %li.page_item.page-item-25
-                    %a{:href => "http://www.grumpiverse.com/?page_id=25", :title => "Frownies"} Frownies
-                  %li.page_item.page-item-27
-                    %a{:href => "http://www.grumpiverse.com/?page_id=27", :title => "Grumpzilla"} Grumpzilla
-              %li.page_item.page-item-14
-                %a{:href => "http://www.grumpiverse.com/?page_id=14", :title => "Causes"} Causes
-              %li.page_item.page-item-2
-                %a{:href => "http://www.grumpiverse.com/?page_id=2", :title => "About"} About
-          /
+                  - Character.all.each do |character|
+                    %li{:class => "page_item #{'current_page_item' if params[:id] == character.friendly_id}"}
+                      = link_to character.name, character_path(:id => character.friendly_id)
+              %li.page_item
+                %a{:href => "#", :title => "Causes"} Causes
+              %li.page_item
+                = link_to "About", page_path(:slug => "about")
+          / 
+            TODO:  Reenable search form once implemented
             .fr
               %form#topSearch.search{:action => "http://www.grumpiverse.com", :method => "get"}
                 %p.fields
                   %input#s{:name => "s", :onblur => "if (this.value == '') {this.value = 'search';}", :onfocus => "if (this.value == 'search') {this.value = '';}", :type => "text", :value => "search"}/
                   %button.replace{:name => "submit", :type => "submit"}
-        / Page Nav Ends
         #header
           %h1
-            %a{:href => "http://www.grumpiverse.com"}
+            = link_to root_path do
               %span.welcome Welcome to...
               %br/
               %span.the the
               %span Grumpiverse
-        / Top Ad Starts
-        / Top Ad Ends
         #twitter
           %h3.title-twitter Twitter
           %ul#twitter_update_list
@@ -79,41 +66,28 @@
             %a{:href => "http://twitter.com/grumpiverse"} Follow us
             or
             %a{:href => "http://twitter.com/grumpiverse/lists/cast"} follow the cast!          
-        / /#twitter
         .clear
-      / Content Starts
       #content.home.wrap
-        = yield
-      / Content Ends
-      / bottom Starts
+        = (body = yield(:body)).blank? ? yield : body
       #bottom-tile
       #bottom-out
         #bottom.wrap
           #features-top
-          / End features-top
           #features
             #tab-2.clearfix
               %a{:href => "http://www.grumpiverse.com/?p=1", :title => "Permanent Link to Poor People"}
                 %img.thumbnail{:alt => "Poor People", :src => "http://www.grumpiverse.com/wp-content/themes/groovyblog/thumb.php?src=http://www.grumpiverse.com/wp-content/uploads/1-lindsay_cathedral.png&h=80&w=80&zc=1&q=90"}/
-            /
-              Remove comments to add tab
-              <div id="tab-a" class="clearfix">
-              taba
-              </div>
-          / End features
           .wrap
-            / Footer Widget Area Starts
             .block.left
             .block.middle
             .block.right
-            / Footer Widget Area Ends
-        / bottom-out Ends
-      / bottom Ends
-      / footer Starts
       #footer-out
         #footer.wrap
           .col-left
-            %p © 2010 Grumpiverse. All Rights Reserved.
+            %p 
+              &copy; 
+              = Time.now.year
+              Grumpiverse. All Rights Reserved.
           .col-right
             %p
               Design by
