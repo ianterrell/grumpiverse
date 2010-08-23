@@ -15,4 +15,8 @@ module ApplicationHelper
     [['Cast', Character.all.map{|c|[c.name, "Character:#{c.id}"]}],
      ['Crew', User.all.map{|u|[u.name, "User:#{u.id}"]}]]
   end
+  
+  def tweet_this(options = {})
+    render :partial => "shared/tweet_this", :locals => { :text => options[:text], :url => options[:url] }
+  end
 end
