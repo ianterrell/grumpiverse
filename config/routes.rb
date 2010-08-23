@@ -27,6 +27,7 @@ Grumpiverse::Application.routes.draw do
         post :reorder
       end
     end
+    match "textile", :to => "base#parse_textile"
     root :to => "base#root"
   end
   

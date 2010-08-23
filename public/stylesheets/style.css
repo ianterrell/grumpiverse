@@ -561,29 +561,6 @@ h3.title-twitter { font-family: Bigfish, serif; font-size: 32px; width:100%; hei
 	background:#ddd;
 }
 
-/* Main Content (style) */
-
-#main a { text-decoration: underline; }
-#main a:hover {	text-decoration: none; }
-#main h2, #main h3 { font-weight: normal; }
-#main h2 { font-size: 24px;	padding-top:0; }
-#main h3 {font-size: 18px; }
-#main h4 { font-size: 12px; }
-#main ol, #main ul { line-height: 18px; }
-#main ul { padding-left: 50px; }
-#main ul li { list-style: circle; padding: 3px 0; }
-#main ol { padding-left: 57px; }
-#main ol li { list-style: decimal; padding: 3px 0; }
-#main blockquote {
-	background:url(/images/box3-bg.png) repeat top left;
-	border-left:2px solid #222;
-	color:#fff;
-	font-style:italic;
-	margin:5px auto 5px;
-	padding:10px 20px;
-	width:90%;
-}
-
 /* Main Content (post) */
 
 #main.single { width:700px; margin:0; padding:0px;  }
@@ -637,66 +614,6 @@ h3.title-twitter { font-family: Bigfish, serif; font-size: 32px; width:100%; hei
 	clear: both;
 }
 #main .page h2 {padding-top: 5px;}
-
-/* Comments */
-
-#comments h3 { font-size: 20px;	font-weight: normal;padding: 10px 0 0px 0;}
-#comments h3.comm { padding: 10px 0 20px 0;}
-
-#comments #comments_wrap {padding: 0; position: relative; margin-top:20px;}
-#comments ol.commentlist li { list-style-type:none; }
-
-#comments .comment a { text-decoration: underline; }
-#comments .comment a:hover { text-decoration: none; }
-#comments .comment small { font-size: 10px;	margin-top: -2px; }
-
-#comments .comment span.reply { float:right; padding: 3px 3px 0; font-size:11px; }
-#comments .comment span.reply a { text-decoration:none; color:#aaa; }
-
-#comments ul.children { margin:10px 0 0 25px; padding:0; }
-
-#comments .navigation .alignright, #comments .navigation .alignleft { margin:0;}
-#comments .navigation a {
-	color: #fff;
-	display: block;
-	padding: 5px 9px;
-	margin-left: 4px;
-	font-weight:bold;
-}
-#comments .commentlist {padding:0;}
-
-#comments .commentlist #respond #form_wrap {
-	padding:0 0 25px;
-	margin:0;
-	border:0;
-	width:auto;
-}
-#comments ol.commentlist li  {
-	background:url(/images/box3-bg.png) repeat;
-	-moz-border-radius: 6px;
-	-khtml-border-radius: 6px;
-	-webkit-border-radius: 6px;
-	border-radius: 6px;
-	margin: 0 0 10px;
-	padding: 18px 20px 18px 20px;
-	position: relative;
-}
-
-#comments ol.commentlist li img.avatar {float:right;}
-#comments ol.commentlist li ul li {	margin:10px 0 0;}
-#comments ol.commentlist .comment-meta a { color:#76967E; padding-bottom:5px; }
-#comments ol.commentlist .children { margin:0; }
-#respond p.submit input {padding:5px 10px; cursor:pointer; font-weight:bold; }
-#respond ol {padding:20px 0 0; list-style-type:none;}
-#respond ol li { list-style-type:none;}
-.cancel-comment-reply { padding: 10px 0; }
-ol.commentlist #respond { margin-top:10px; }
-#respond textarea, #respond input{ border:0px; background:url(/images/box3-bg.png) repeat; padding:7px; color:#fff;
-	-moz-border-radius: 6px;
-	-khtml-border-radius: 6px;
-	-webkit-border-radius: 6px;
-	border-radius: 6px;
-}
 
 /* Sidebar */
 
@@ -761,80 +678,6 @@ ol.commentlist #respond { margin-top:10px; }
 	padding:0 0 3px 15px;
 	background:none;
 }
-
-/* Sidebar (widgets)*/
-
-.textwidget {clear: both;padding: 5px 2px;line-height:20px;}
-#wp-calendar {
-	width: 95%;
-	padding: 0 0 0px 0;
-	margin-bottom: 15px;
-	clear: both;
-}
-#wp-calendar caption {padding: 10px;}
-#wp-calendar th {color: #fff;}
-#wp-calendar th, #wp-calendar td {
-	padding: 5px;
-	text-align: center;
-	background: url(/images/box3-bg.png) repeat top left;
-	color: #fff;
-}
-#wp-calendar td {background: transparent;}
-#wp-calendar td, table#wp-calendar th {padding: 3px 0;}
-#wp-calendar a {text-decoration: underline;}
-#wp-calendar a:hover {text-decoration: none;}
-
-/* Sidebar (Search)*/
-
-#sidebar #search_main form div {
-	position: relative;
-	height: 33px;
-	background: #ccc;
-	margin-bottom:25px;
-}
-
-#sidebar #search_main input.field {
-	width: 163px;
-	position: absolute;
-	left: 12px;
-	top: 7px;
-	padding-top: 2px;
-	outline: none;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #fff;
-	border: 0;
-	background: transparent;
-	z-index: 1;
-}
-
-#sidebar #search_main input.submit {
-	position: absolute;
-	right: 0;
-	top: 0;
-	z-index: 1;
-}
-
-
-/* Sidebar (flickr) */
-
-#flickr h3 span {color: #0061D8;}
-#flickr h3 span span {color: #FF1183;}
-#flickr .wrap {
-	margin-left: -5px;
-	padding: 0;
-	position: relative;
-	margin-bottom:25px;
-}
-#flickr a img {
-	float: left;
-	margin-left: 10px;
-	margin-bottom: 10px;
-	display: block;
-	padding: 3px;
-	border: #fff 1px dashed;
-}
-#flickr a:hover img {border: #000 1px dashed;}
 
 /* Bottom */
 

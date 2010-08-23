@@ -62,4 +62,8 @@ class Article < ActiveRecord::Base
     class_name, instance_id = code.split ':'
     self.author = class_name.constantize.find instance_id
   end
+  
+  def render_body
+    RedCloth.new(body).to_html.html_safe
+  end
 end

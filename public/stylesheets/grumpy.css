@@ -1,2 +1,26 @@
 #twitter .follow { clear: both; padding-top: 10px; }
 #twitter .follow a { color: #44a7ec; text-decoration: underline; font-weight: bold; }
+
+
+/* Main Content (style) */
+
+#main a { text-decoration: underline; }
+#main a:hover {	text-decoration: none; }
+#main h2, #main h3 { font-weight: normal; }
+#main h2 { font-size: 24px;	padding-top:0; }
+#main h3 {font-size: 18px; }
+#main h4 { font-size: 12px; }
+#main ol, #main ul { line-height: 18px; }
+#main ul { padding-left: 50px; }
+#main ul li { list-style: circle; padding: 3px 0; }
+#main ol { padding-left: 57px; }
+#main ol li { list-style: decimal; padding: 3px 0; }
+#main blockquote {
+	background:url(/images/box3-bg.png) repeat top left;
+	border-left:2px solid #222;
+	color:#fff;
+	font-style:italic;
+	margin:5px auto 5px;
+	padding:10px 20px;
+	width:90%;
+}

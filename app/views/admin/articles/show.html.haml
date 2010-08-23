@@ -1,4 +1,4 @@
-= @article.body.html_safe
+= @article.render_body
 
 - content_for :sidebar do
   = link_to "Back", admin_articles_path, :class => "back"

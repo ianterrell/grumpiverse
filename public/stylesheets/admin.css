@@ -28,5 +28,7 @@
 .admin form#schedule-form { margin-top: 10px; }
 .admin form#schedule-form label { font-weight: bold; }
 
+.admin textarea { width: 590px; }
+
 .admin input[type=submit], .admin input[type=button] { font-weight: bold; cursor: pointer; color: #FFFFFF; background: #660099; border: 1px solid #550080; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
 .admin input[type=submit]:hover, .admin input[type=button]:hover { border: 1px solid blue; }

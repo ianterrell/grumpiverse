@@ -6,5 +6,6 @@ jQuery(function ($) {
   });
   $(document).ready(function(){
     $('.datepicker').datepicker();
+    $("textarea").markItUp(mySettings);
   });
 });
