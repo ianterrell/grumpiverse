@@ -27,3 +27,4 @@ You need to use .custom before every style e.g.
 #header h1 span.the { font-size: 48px; }
 #header h1 a { color: white; }
 
+input { outline: none; }

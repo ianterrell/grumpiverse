@@ -4,19 +4,9 @@
   = f.error_message_on :title
 
 %div
-  = f.label :slug
-  = f.text_field :slug
-  = f.error_message_on :slug
-
-%div
-  = f.label :keywords, "Keywords for SEO"
-  = f.text_field :keywords
-  = f.error_message_on :keywords
-
-%div
-  = f.label :description, "Description for SEO"
-  = f.text_area :description
-  = f.error_message_on :description
+  = f.label :author_code, "Author"
+  = f.select :author_code, grouped_options_for_select(article_author_grouped_options, f.object.author_code)
+  = f.error_message_on :author_code
 
 %div
   = f.label :body

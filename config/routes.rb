@@ -10,7 +10,16 @@ Grumpiverse::Application.routes.draw do
         post :reorder
       end
     end
-    resources :articles
+    resources :articles do
+      collection do
+        get :published
+        get :all
+      end
+      member do
+        post :schedule_for_publication
+        post :undo_schedule_for_publication
+      end
+    end
     resources :tweets
     resources :pages
     resources :grams do

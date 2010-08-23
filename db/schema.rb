@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100820232440) do
+ActiveRecord::Schema.define(:version => 20100823192434) do
 
   create_table "articles", :force => true do |t|
     t.integer  "author_id"
@@ -20,13 +20,30 @@ ActiveRecord::Schema.define(:version => 20100820232440) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cached_slug"
+    t.datetime "scheduled_for_publication_at"
+    t.datetime "published_at"
+    t.integer  "delayed_job_id"
   end
 
   create_table "characters", :force => true do |t|
     t.string   "name"
-    t.string   "slug"
     t.string   "twitter_handle"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "cached_slug"
+  end
+
+  create_table "delayed_jobs", :force => true do |t|
+    t.integer  "priority",   :default => 0
+    t.integer  "attempts",   :default => 0
+    t.text     "handler"
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -47,6 +64,18 @@ ActiveRecord::Schema.define(:version => 20100820232440) do
     t.datetime "updated_at"
   end
 
+  create_table "slugs", :force => true do |t|
+    t.string   "name"
+    t.integer  "sluggable_id"
+    t.integer  "sequence",                     :default => 1, :null => false
+    t.string   "sluggable_type", :limit => 40
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "slugs", ["name", "sluggable_type", "sequence", "scope"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
+  add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
+
   create_table "tweets", :force => true do |t|
     t.integer  "character_id"
     t.string   "tweet"
@@ -64,6 +93,7 @@ ActiveRecord::Schema.define(:version => 20100820232440) do
     t.datetime "remember_created_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

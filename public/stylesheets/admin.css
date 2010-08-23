@@ -1,3 +1,7 @@
+.flash { padding: 10px 10px 10px 30px; border: 2px solid black; margin-bottom: 20px; width: 920px;  -moz-border-radius: 6px; -webkit-border-radius: 6px;}
+.flash a.close { display:block; margin-top: 1px; float:right; text-decoration:none; text-align:center; }
+.alert { background:#FFF6BF url(/images/icons/16x16/warning.png) 7px 50% no-repeat; color: #514721; background-color: #FFF6BF; border-color: #FFD324; }
+.notice { background:#D1FF9C url(/images/icons/16x16/accept.png) 7px 50% no-repeat; color: #264409; background-color: #D1FF9C; border-color: #C6D880; }
 
 .admin a.back   { color: white; padding-left: 18px; background:transparent url(/images/icons/16x16/back.png)   0px 50% no-repeat; }
 .admin a.edit   { color: white; padding-left: 18px; background:transparent url(/images/icons/16x16/edit.png)   0px 50% no-repeat; }
@@ -9,3 +13,20 @@
 .admin table tr { border: 1px solid rgba(0,0,0,0.3); }
 .admin table td { border: 1px solid rgba(0,0,0,0.3); padding: 5px;}
 .admin table td.actions { text-align: center; }
+
+.admin ul.articles { display: block; list-style: none; margin: 0px; padding: 0px!important;  }
+.admin ul.articles li { background: rgba(0,0,0,0.15); padding: 8px!important; display: block; margin-bottom: 5px;}
+.admin ul.articles li:hover { background: rgba(0,0,0,0.3); }
+.admin ul.articles li .actions { float: right; }
+.admin ul.articles li .title { font-size: 20px; }
+.admin ul.articles li .title a { color: white; text-decoration: none!important;}
+.admin ul.articles li .author { margin-top: 5px; }
+.admin ul.articles li .status { font-style: italic; }
+
+.admin #sidebar .status { margin-top: 10px; }
+
+.admin form#schedule-form { margin-top: 10px; }
+.admin form#schedule-form label { font-weight: bold; }
+
+.admin input[type=submit], .admin input[type=button] { font-weight: bold; cursor: pointer; color: #FFFFFF; background: #660099; border: 1px solid #550080; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
+.admin input[type=submit]:hover, .admin input[type=button]:hover { border: 1px solid blue; }

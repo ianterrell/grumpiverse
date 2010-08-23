@@ -11,10 +11,12 @@ gem 'aws-s3'
 gem 'simple_form'
 gem 'inherited_resources', '1.1.2'
 gem 'friendly_id', '~> 3.0'
-gem "haml"
-gem "rails3-generators", :group => :development
+gem 'will_paginate', '3.0.pre'
+gem 'delayed_job'
+gem 'haml'
+gem 'rails3-generators', :group => :development
 
-gem "RedCloth"
+gem 'RedCloth'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -40,6 +42,6 @@ gem "RedCloth"
 
 group :test do
   gem 'rspec-rails', '>= 2.0.0.beta.15'
-  gem "factory_girl", :git => "http://github.com/thoughtbot/factory_girl.git"
-  gem "shoulda", :git => "http://github.com/thoughtbot/shoulda.git"
+  gem 'factory_girl', :git => 'http://github.com/thoughtbot/factory_girl.git'
+  gem 'shoulda', :git => 'http://github.com/thoughtbot/shoulda.git'
 end

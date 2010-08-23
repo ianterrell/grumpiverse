@@ -2,5 +2,25 @@
 
 - content_for :sidebar do
   = link_to "Back", admin_articles_path, :class => "back"
-  = link_to "Edit", edit_admin_article_path(@article), :class => "edit"
-  = link_to "Delete", admin_article_path(@article), :method => :delete, :confirm => "Are you sure?", :class => "delete"
+  - if @article.draft?
+    = link_to "Edit", edit_admin_article_path(@article), :class => "edit"
+    = link_to "Delete", admin_article_path(@article), :method => :delete, :confirm => "Are you sure?", :class => "delete"
+  
+  .status
+    - if @article.draft?
+      = "This article is a #{content_tag(:strong, 'draft')}.".html_safe
+      
+      - form_tag schedule_for_publication_admin_article_path(@article), :id => "schedule-form" do |form|
+        = label_tag :publish_at, "Schedule for publication"
+        = text_field_tag :publish_at, '', :class => "datepicker"
+        = submit_tag "Schedule"
+      
+    - elsif @article.scheduled?
+      = "This article is scheduled to be published on #{content_tag :strong, @article.scheduled_for_publication_at.strftime("%A, %B %d")}.".html_safe
+      
+      - form_tag undo_schedule_for_publication_admin_article_path(@article), :id => "schedule-form" do |form|
+        = submit_tag "Undo scheduling"
+            
+    - elsif @article.published?
+      = "This article was published on #{content_tag :strong, @article.published_at.strftime("%A, %B %d")}.".html_safe
+      
