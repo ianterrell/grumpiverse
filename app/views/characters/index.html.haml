@@ -1,1 +1,8 @@
-hi!  this is a listing of our cast
+%h1 The Cast of the Grumpiverse
+
+%ul.cast
+  - @characters.each do |character|
+    %li
+      = image_tag character.picture.url(:thumb)
+      .name= link_to character.name, character
+      .desc= character.render_short_description

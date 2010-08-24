@@ -7,6 +7,10 @@
       .tabber-post
         %h2
           = link_to @featured_article.title, @featured_article
+        %p.byline
+          = image_tag @featured_article.author.avatar.url(:tiny)
+          by
+          = link_to @featured_article.author.name, @featured_article.author
         %p.meta
           %span.date= @featured_article.published_at.to_s :full_pretty
         .text
@@ -21,6 +25,6 @@
       %h4
         = link_to article.title, article
       = link_to article_path(article) do
-        %img.thumbnail{:alt => "Poor People", :src => "http://www.grumpiverse.com/wp-content/themes/groovyblog/thumb.php?src=http://www.grumpiverse.com/wp-content/uploads/1-lindsay_cathedral.png&h=80&w=80&zc=1&q=90"}/
+        = image_tag article.author.avatar.url(:small), :class => "thumbnail"
       = article.render_body
   .clear

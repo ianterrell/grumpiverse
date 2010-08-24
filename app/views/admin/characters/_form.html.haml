@@ -4,12 +4,32 @@
   = f.error_message_on :name
 
 %div
+  = image_tag f.object.picture.url(:thumb) if f.object.picture?
+  = f.label :picture
+  = f.file_field :picture
+  = f.error_message_on :picture
+  = f.check_box :remove_picture
+  = f.label :remove_picture, "Check to remove this picture"
+
+%div
+  = image_tag f.object.avatar.url(:thumb) if f.object.avatar?
+  = f.label :avatar
+  = f.file_field :avatar
+  = f.error_message_on :avatar
+  = f.check_box :remove_avatar
+  = f.label :remove_avatar, "Check to remove this avatar"
+
+%div
   = f.label :twitter_handle
   = f.text_field :twitter_handle
   = f.error_message_on :twitter_handle
 
 %div
+  = f.label :short_description
+  = f.text_area :short_description
+  = f.error_message_on :short_description
+  
+%div
   = f.label :description
   = f.text_area :description
   = f.error_message_on :description
-

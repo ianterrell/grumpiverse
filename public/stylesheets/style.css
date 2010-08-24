@@ -123,6 +123,14 @@ form#topSearch p.fields button {
 
 #header {
     float: left;
+    padding-top: 40px;
+	clear: both;
+	position: relative;
+	margin-bottom:25px;
+}
+
+#header-small {
+    float: left;
     padding-top: 70px;
 	clear: both;
 	position: relative;
@@ -822,7 +830,7 @@ h3.title-twitter { font-family: Bigfish, serif; font-size: 32px; width:100%; hei
 /*background:transparent url(/images/twitter.png) no-repeat scroll left 40px;*/
 float:right;
 height:120px;
-margin-top:70px;
+margin-top:40px;
 text-align:right;
 width:350px;
 

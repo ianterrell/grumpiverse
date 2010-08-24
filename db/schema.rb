@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100823192434) do
+ActiveRecord::Schema.define(:version => 20100824030032) do
 
   create_table "articles", :force => true do |t|
     t.integer  "author_id"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(:version => 20100823192434) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "cached_slug"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.text     "short_description"
   end
 
   create_table "delayed_jobs", :force => true do |t|
@@ -94,6 +103,10 @@ ActiveRecord::Schema.define(:version => 20100823192434) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

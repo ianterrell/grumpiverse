@@ -1,1 +1,39 @@
-= @character.name
+%h1= @character.name
+
+.character-left
+  = image_tag @character.picture.url, :class => "character"
+
+  / TODO:  Add in a twitter icon, make pretty!
+  .follow-links
+    = link_to "Follow #{@character.name} on Twitter", "http://twitter.com/#{@character.twitter_handle}"
+    %br
+    or
+    = link_to "follow the cast!", "http://twitter.com/grumpiverse/lists/cast"
+  
+  %br
+  / TODO: Make this a pretty button, make sure all the peeps line up, implement this feature in grumpygrams
+  = link_to "Send a #{@character.name} GrumpyGram!", "http://www.grumpygrams.com/#send-#{@character.friendly_id}"
+  
+  %br
+  / TODO: Make this a pretty button, implement shop
+  = link_to "Buy a #{@character.name} t-shirt!", "#"
+  
+.character-right
+  = @character.render_description
+
+  %h2 Recent Articles
+  - if @recent_articles.empty?
+    %p
+      = @character.name
+      hasn't published any articles yet!
+  - else
+    %ul.articles
+      - @character.articles.published.limit(5).each do |article|
+        %li
+          .title= link_to article.title, article
+          .date= article.published_at.to_s(:full_pretty)
+
+.character-social
+  = tweet_this :follow => @character.twitter_handle
+  = render :partial => "/shared/facebook_comments"
+

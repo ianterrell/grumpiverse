@@ -15,7 +15,6 @@
           ago
         %td.actions
           = link_to "Edit", edit_admin_character_path(character), :class => "edit"
-          = link_to "Delete", admin_character_path(character), :method => :delete, :confirm => "Are you sure you wish to delete this character? This cannot be undone.", :class => "delete"
 
 - content_for :sidebar do
   = link_to "Add Character", new_admin_character_path, :class => "add"

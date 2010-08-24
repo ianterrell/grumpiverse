@@ -17,6 +17,6 @@ module ApplicationHelper
   end
   
   def tweet_this(options = {})
-    render :partial => "shared/tweet_this", :locals => { :text => options[:text], :url => options[:url] }
+    render :partial => "shared/tweet_this", :locals => { :text => options[:text], :url => options[:url], :options => options }
   end
 end

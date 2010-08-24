@@ -16,7 +16,7 @@ class Article < ActiveRecord::Base
     !published? && !!scheduled_for_publication_at
   end
   
-  scope :published, where("published_at IS NOT NULL").order(:published_at)
+  scope :published, where("published_at IS NOT NULL").order("published_at DESC")
   def published?
     !!published_at
   end

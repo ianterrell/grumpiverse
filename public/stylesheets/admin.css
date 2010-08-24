@@ -30,5 +30,15 @@
 
 .admin textarea { width: 590px; }
 
-.admin input[type=submit], .admin input[type=button] { font-weight: bold; cursor: pointer; color: #FFFFFF; background: #660099; border: 1px solid #550080; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
+.admin input[type=submit], .admin input[type=button] { padding: 10px; font-weight: bold; cursor: pointer; color: #FFFFFF; background: #660099; border: 1px solid #550080; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
 .admin input[type=submit]:hover, .admin input[type=button]:hover { border: 1px solid blue; }
+
+#article_title { display: block; font-size: 16px; padding: 5px; width: 650px; margin-bottom: 10px; }
+#article_author_code { margin-bottom: 10px; }
+#article_body, #character_description { width: 650px; margin-bottom: 10px; }
+#character_short_description { width: 650px; height: 50px; margin-bottom: 10px; }
+
+#character_name { display: block; font-size: 16px; padding: 5px; margin-bottom: 10px; }
+
+img.character { float: left; margin-right: 10px; }
+img.avatar-thumb { float: left; margin-right: 10px; }
