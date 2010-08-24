@@ -1,3 +1,5 @@
+require 'bundler/capistrano'
+
 set :application, "grumpiverse"
 
 default_run_options[:pty] = true
@@ -21,7 +23,6 @@ set :branch, "master"
 set :deploy_to,      "/home/deploy/#{application}"
 
 after "deploy:update_code","deploy:symlink_configs"
-# after "deploy:update_code","deploy:bundle_install" # Not sure how to integrate with bundler yet
 after "deploy:update_code","deploy:cleanup"
 # after "deploy:update_code","deploy:package_assets"
 

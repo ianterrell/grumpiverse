@@ -19,6 +19,8 @@ gem 'rails3-generators', :group => :development
 gem 'RedCloth'
 gem 'twitter'
 
+gem 'capistrano'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
