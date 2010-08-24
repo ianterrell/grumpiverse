@@ -34,7 +34,6 @@ class Article < ActiveRecord::Base
   end
   
   def schedule_for_publication_at(publish_at)
-    Time.zone = "Pacific Time (US & Canada)"
     self.scheduled_for_publication_at = Time.zone.parse(publish_at)
     if scheduled?
       job = Delayed::Job.enqueue ArticlePublicationJob.new(id), 0, scheduled_for_publication_at

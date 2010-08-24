@@ -46,3 +46,13 @@ textarea.seo_description { width: 650px; height: 50px; margin-bottom: 10px; }
 
 img.character { float: left; margin-right: 10px; }
 img.avatar-thumb { float: left; margin-right: 10px; }
+
+.admin ul.tweets { display: block; list-style: none; margin: 0px; padding: 0px!important;  }
+.admin ul.tweets li { background: rgba(0,0,0,0.15); padding: 8px!important; display: block; margin-bottom: 5px;}
+.admin ul.tweets li img { float: left; margin-right: 10px; }
+.admin ul.tweets li:hover { background: rgba(0,0,0,0.3); }
+.admin ul.tweets li .actions { float: right; }
+.admin ul.tweets li .title { font-size: 20px; }
+.admin ul.tweets li .title a { color: white; text-decoration: none!important;}
+.admin ul.tweets li .author { margin-top: 5px; }
+.admin ul.tweets li .status { margin-top: 5px; font-style: italic; }

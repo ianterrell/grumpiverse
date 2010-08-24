@@ -11,8 +11,7 @@
 - @scheduled_articles.group_by(&:scheduled_publication_day).each do |day, articles|
   %h3= day
   %ul.articles
-    - articles.each do |article|
-      = render articles
+    = render articles
       
 
 

@@ -24,7 +24,11 @@ Grumpiverse::Application.routes.draw do
       end
     end
     resources :comics
-    resources :tweets
+    resources :tweets do
+      collection do
+        get :tweeted
+      end
+    end
     resources :pages
     resources :grams do
       collection do

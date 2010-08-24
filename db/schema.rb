@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100824054354) do
+ActiveRecord::Schema.define(:version => 20100824064952) do
 
   create_table "articles", :force => true do |t|
     t.integer  "author_id"
@@ -109,10 +109,11 @@ ActiveRecord::Schema.define(:version => 20100824054354) do
   create_table "tweets", :force => true do |t|
     t.integer  "character_id"
     t.string   "tweet"
-    t.datetime "scheduled_for"
+    t.datetime "scheduled_for_publication_at"
     t.datetime "tweeted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "delayed_job_id"
   end
 
   create_table "users", :force => true do |t|

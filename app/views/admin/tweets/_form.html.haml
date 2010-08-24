@@ -1,25 +1,15 @@
 %div
-  = f.label :title
-  = f.text_field :title
-  = f.error_message_on :title
+  = f.label :tweet
+  = f.text_field :tweet
+  = f.error_message_on :tweet
 
 %div
-  = f.label :slug
-  = f.text_field :slug
-  = f.error_message_on :slug
+  = f.label :character_id
+  = f.select :character_id, options_from_collection_for_select(Character.all, :id, :name, f.object.character_id), :include_blank => "Grumpiverse Main Account"
+  = f.error_message_on :character_id
 
 %div
-  = f.label :keywords, "Keywords for SEO"
-  = f.text_field :keywords
-  = f.error_message_on :keywords
-
-%div
-  = f.label :description, "Description for SEO"
-  = f.text_area :description
-  = f.error_message_on :description
-
-%div
-  = f.label :body
-  = f.text_area :body
-  = f.error_message_on :body
+  = f.label :scheduled_for_publication_at
+  = f.datetime_select :scheduled_for_publication_at
+  = f.error_message_on :scheduled_for_publication_at
 
