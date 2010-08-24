@@ -19,4 +19,10 @@ module ApplicationHelper
   def tweet_this(options = {})
     render :partial => "shared/tweet_this", :locals => { :text => options[:text], :url => options[:url], :options => options }
   end
+  
+  def feedburner
+    # TODO:  Once the site is up, sign up for Feedburner and change the url here
+    # "http://feeds.feedburner.com/grumpiverse"
+    feed_path(:format => :atom)
+  end
 end

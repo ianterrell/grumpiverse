@@ -9,6 +9,7 @@
     %meta{:name => "description", :content => @meta_description || "Home to all things grumpy!  Which, given the state of the world, means just about everything.  Come on in!"}
     %meta{:name => "keywords", :content => @meta_keywords || "grumpiverse, grumpy, grumpygrams, grumpygram" }
     %meta{:name => "generator", :content => "I made this website with me own two hands.  But do they call me the website maker?  No."}/
+    = auto_discovery_link_tag(:atom, feedburner)
     / TODO:  Use AssetPackager or Jammit to concat into one CSS file?
     = stylesheet_link_tag "style", "grumpy"
     / TODO:  Implement RSS and integrate with Feedburner
@@ -45,9 +46,10 @@
                 %a{:href => "#", :title => "Causes"} Causes
               %li.page_item
                 = link_to "About", page_path(:slug => "about")
-          / 
-            TODO:  Reenable search form once implemented
-            .fr
+          .fr
+            = link_to image_tag("icons/feed-icon-28x28.png"), feedburner
+            / 
+              TODO:  Reenable search form once implemented
               %form#topSearch.search{:action => "http://www.grumpiverse.com", :method => "get"}
                 %p.fields
                   %input#s{:name => "s", :onblur => "if (this.value == '') {this.value = 'search';}", :onfocus => "if (this.value == 'search') {this.value = '';}", :type => "text", :value => "search"}/
@@ -89,6 +91,9 @@
               &copy; 
               = Time.now.year
               Grumpiverse. All Rights Reserved.
+              = link_to feedburner do
+                = image_tag("icons/feed-icon-14x14.png")
+                Atom Feed
           .col-right
             %p
               Design by
