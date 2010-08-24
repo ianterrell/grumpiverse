@@ -14,7 +14,9 @@ jQuery(function ($) {
   
   $(document).ready(function(){
     $('.datepicker').datepicker();
-    $("textarea").markItUp(mySettings);
+    $("textarea").each(function(){
+      if ($(this).attr('id') != "tweet_tweet" && $(this).attr('class') != "seo_description")
+        $(this).markItUp(mySettings);
+    });  
   });
-  
 });

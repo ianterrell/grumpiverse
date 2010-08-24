@@ -40,12 +40,14 @@
 #article_long_excerpt { width: 650px; height: 100px; margin-bottom: 10px; }
 #article_short_excerpt { width: 650px; height: 50px; margin-bottom: 10px; }
 textarea.seo_description { width: 650px; height: 50px; margin-bottom: 10px; }
-
+.seo_title input, .seo_keywords input { width: 650px; font-size: 14px; display: block; padding: 3px; margin-bottom: 10px; }
 
 #character_name { display: block; font-size: 16px; padding: 5px; margin-bottom: 10px; }
 
 img.character { float: left; margin-right: 10px; }
 img.avatar-thumb { float: left; margin-right: 10px; }
+
+#tweet_tweet { width: 660px; font-size: 16px; display: block; padding: 5px; margin-bottom: 10px; height: 60px;}
 
 .admin ul.tweets { display: block; list-style: none; margin: 0px; padding: 0px!important;  }
 .admin ul.tweets li { background: rgba(0,0,0,0.15); padding: 8px!important; display: block; margin-bottom: 5px;}
