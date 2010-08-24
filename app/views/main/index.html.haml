@@ -13,6 +13,7 @@
         %span.date= @featured_article.published_at.to_s :full_pretty
       .text
         = @featured_article.render :long
+        = link_to "Read more...", @featured_article, :class => "read-more"
     .clear
   .clear
   .bottom

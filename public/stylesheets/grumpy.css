@@ -55,3 +55,5 @@ ul.cast li .name a { color: white; text-decoration: none!important;}
 p.byline img { float: left; margin-right: 10px; }
 p.byline a { font-weight: bold; color: white; }
 p.meta { clear: both; }
+
+a.read-more { color: white; font-size: 14px; text-decoration: underline;}

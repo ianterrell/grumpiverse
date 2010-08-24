@@ -20,7 +20,7 @@ body {
 }
 #wrap {	background: url(/images/bg.jpg) repeat-x top center; }
 
-#content .col-left {width: 700px;}
+#content .col-left {width: 700px; }
 
 /* Top */
 
@@ -147,7 +147,7 @@ form#topSearch p.fields button {
 
 #content {width: 960px;	margin:0 auto;padding: 0;}
 * html #content { height: 550px; }
-#main {	width:460px;}
+#main {	width:460px; }
 #main div { zoom: 1; }
 
 
@@ -572,7 +572,7 @@ h3.title-twitter { font-family: Bigfish, serif; font-size: 32px; width:100%; hei
 /* Main Content (post) */
 
 #main.single { width:700px; margin:0; padding:0px;  }
-#main.single .post { background:url(/images/box3-bg.png) repeat top left; padding:10px 20px; }
+#main.single .post { background:url(/images/box3-bg.png) repeat top left; padding:10px 20px 20px 20px; }
 #main.single .box3-top { background:url(/images/box3-top.png) no-repeat top left; width:700px; height:6px; font-size:1px; }
 #main.single .box3-bot { background:url(/images/box3-bot.png) no-repeat top left; width:700px; height:6px; font-size:1px; margin-bottom:15px; }
 #main.single .box3 .post-details { font-size:11px; color:#76967e; }
