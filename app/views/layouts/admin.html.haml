@@ -29,6 +29,8 @@
             %ul#nav
               %li{:class => "page_item #{'current_page_item' if controller_name == "articles"}"}
                 = link_to "Articles", admin_articles_path
+              %li{:class => "page_item #{'current_page_item' if controller_name == "comics"}"}
+                = link_to "Comics", admin_comics_path
               %li{:class => "page_item #{'current_page_item' if controller_name == "pages"}"}
                 = link_to "Pages", admin_pages_path
               %li{:class => "page_item #{'current_page_item' if controller_name == "characters"}"}
@@ -72,8 +74,4 @@
       #footer-out
         #footer.wrap
           .col-left
-            %p © 2008 Grumpiverse. All Rights Reserved.
-          .col-right
-            %p
-              %a{:href => "http://woothemes.com"}
-                %img{:height => "26", :src => "http://www.grumpiverse.com/wp-content/themes/groovyblog/images/woothemes.png", :width => "87"}/
+            %p CONFIDENTIAL BITCHES

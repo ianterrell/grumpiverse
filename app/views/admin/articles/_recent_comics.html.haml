@@ -1,0 +1,4 @@
+.article-sidebar-comics
+  %h3 Recent Comics
+  - Comic.recent.each do |comic|
+    = link_to image_tag(comic.image.url(:thumb)), comic.image.url(:main), :"data-alt" => comic.alt_text

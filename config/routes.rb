@@ -5,6 +5,7 @@ Grumpiverse::Application.routes.draw do
   match 'cast/:id', :to => "characters#show", :as => "character"
   
   resources :articles, :only => :show
+  resources :users, :only => :show
 
   namespace :admin do
     resources :characters do
@@ -22,6 +23,7 @@ Grumpiverse::Application.routes.draw do
         post :undo_schedule_for_publication
       end
     end
+    resources :comics
     resources :tweets
     resources :pages
     resources :grams do

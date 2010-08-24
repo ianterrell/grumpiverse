@@ -9,6 +9,20 @@
   = f.error_message_on :author_code
 
 %div
+  = f.label :main_comic_id
+  = f.select :main_comic_id, options_for_select(Comic.recent.map{|c|[c.alt_text,c.id]})
+  = f.error_message_on :main_comic_id
+
+%div
   = f.text_area :body
   = f.error_message_on :body
+  
+%div
+  = f.label :long_excerpt
+  = f.text_area :long_excerpt
+  = f.error_message_on :long_excerpt
 
+%div
+  = f.label :short_excerpt
+  = f.text_area :short_excerpt
+  = f.error_message_on :short_excerpt

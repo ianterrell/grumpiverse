@@ -1,0 +1,7 @@
+= image_tag @comic.image.url(:main)
+%p= @comic.alt_text
+
+- content_for :sidebar do
+  = link_to "Back", admin_comics_path, :class => "back"
+  = link_to "Edit", edit_admin_comic_path(@comic), :class => "edit"
+  = link_to "Delete", admin_comic_path(@comic), :method => :delete, :confirm => "Are you sure?", :class => "delete"

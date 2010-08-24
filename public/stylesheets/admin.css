@@ -37,6 +37,8 @@
 #article_author_code { margin-bottom: 10px; }
 #article_body, #character_description { width: 650px; margin-bottom: 10px; }
 #character_short_description { width: 650px; height: 50px; margin-bottom: 10px; }
+#article_long_excerpt { width: 650px; height: 100px; margin-bottom: 10px; }
+#article_short_excerpt { width: 650px; height: 50px; margin-bottom: 10px; }
 
 #character_name { display: block; font-size: 16px; padding: 5px; margin-bottom: 10px; }
 

@@ -1,8 +1,8 @@
-# This file is auto-generated from the current state of the database. Instead 
+# This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
-# Note that this schema.rb definition is the authoritative source for your 
+# Note that this schema.rb definition is the authoritative source for your
 # database schema. If you need to create the application database on another
 # system, you should be using db:schema:load, not running all the migrations
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100824030032) do
+ActiveRecord::Schema.define(:version => 20100824051827) do
 
   create_table "articles", :force => true do |t|
     t.integer  "author_id"
@@ -24,6 +24,9 @@ ActiveRecord::Schema.define(:version => 20100824030032) do
     t.datetime "scheduled_for_publication_at"
     t.datetime "published_at"
     t.integer  "delayed_job_id"
+    t.integer  "main_comic_id"
+    t.text     "long_excerpt"
+    t.text     "short_excerpt"
   end
 
   create_table "characters", :force => true do |t|
@@ -42,6 +45,16 @@ ActiveRecord::Schema.define(:version => 20100824030032) do
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
     t.text     "short_description"
+  end
+
+  create_table "comics", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "alt_text"
   end
 
   create_table "delayed_jobs", :force => true do |t|

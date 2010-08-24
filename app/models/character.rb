@@ -5,8 +5,8 @@ class Character < ActiveRecord::Base
   
   validates_presence_of :name, :twitter_handle
   
-  has_attached_file :avatar, :styles => { :big => "120x120>", :medium => "100x100>", :thumb => "80x80>", :small => "60x60>", :tiny => "30x30>" }
-  has_attached_file :picture, :styles => { :thumb => "80x80>" }
+  has_attached_file :avatar, PaperclipStorageHash.merge(:styles => { :big => "120x120>", :medium => "100x100>", :thumb => "80x80>", :small => "60x60>", :tiny => "30x30>" })
+  has_attached_file :picture, PaperclipStorageHash.merge(:styles => { :thumb => "80x80>" })
   
   def render_description
     RedCloth.new(description).to_html.html_safe

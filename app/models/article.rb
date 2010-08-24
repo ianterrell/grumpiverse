@@ -1,6 +1,7 @@
 class Article < ActiveRecord::Base
   belongs_to :delayed_job, :class_name => "::Delayed::Job", :foreign_key => "delayed_job_id"
   belongs_to :author, :polymorphic => true
+  belongs_to :main_comic, :class_name => "Comic", :foreign_key => "main_comic_id"
   
   has_friendly_id :title, :use_slug => true
   
@@ -22,7 +23,7 @@ class Article < ActiveRecord::Base
   end
   
   def name
-    title
+    id
   end
   
   def scheduled_publication_day
@@ -43,7 +44,7 @@ class Article < ActiveRecord::Base
   
   def undo_schedule_for_publication
     if scheduled?
-      self.delayed_job.destroy
+      self.delayed_job.try :destroy
       self.update_attribute :scheduled_for_publication_at, nil
     else
       false
@@ -63,7 +64,13 @@ class Article < ActiveRecord::Base
     self.author = class_name.constantize.find instance_id
   end
   
-  def render_body
-    RedCloth.new(body).to_html.html_safe
+  def render(what = nil)
+    copy = case what
+    when :short: short_excerpt
+    when :long: long_excerpt
+    else 
+      body
+    end
+    RedCloth.new(copy.to_s).to_html.html_safe
   end
 end

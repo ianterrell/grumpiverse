@@ -1,21 +1,19 @@
 #featured-tabber
   #info
-    .tabber-post-content.tabber-item-1
-      .img
-        %a{:href => "http://www.grumpiverse.com/?p=1", :title => "Permanent Link to Poor People"}
-          %img.thumbnail{:alt => "Poor People", :src => "http://www.grumpiverse.com/wp-content/themes/groovyblog/thumb.php?src=http://www.grumpiverse.com/wp-content/uploads/1-lindsay_cathedral.png&h=&w=480&zc=1&q=90"}/
-      .tabber-post
-        %h2
-          = link_to @featured_article.title, @featured_article
-        %p.byline
-          = image_tag @featured_article.author.avatar.url(:tiny)
-          by
-          = link_to @featured_article.author.name, @featured_article.author
-        %p.meta
-          %span.date= @featured_article.published_at.to_s :full_pretty
-        .text
-          = @featured_article.render_body
-      .clear
+    .img
+      = link_to image_tag(@featured_article.main_comic.image.url(:feature), :alt => "hi there"), @featured_article, :title => @featured_article.main_comic.alt_text
+    .tabber-post
+      %h2
+        = link_to @featured_article.title, @featured_article
+      %p.byline
+        = image_tag @featured_article.author.avatar.url(:tiny)
+        by
+        = link_to @featured_article.author.name, @featured_article.author
+      %p.meta
+        %span.date= @featured_article.published_at.to_s :full_pretty
+      .text
+        = @featured_article.render :long
+    .clear
   .clear
   .bottom
 #recent
@@ -26,5 +24,5 @@
         = link_to article.title, article
       = link_to article_path(article) do
         = image_tag article.author.avatar.url(:small), :class => "thumbnail"
-      = article.render_body
+      = article.render :short
   .clear

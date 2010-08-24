@@ -1,0 +1,12 @@
+%div
+  = image_tag f.object.image.url(:thumb) if f.object.image?
+  = f.label :image
+  = f.file_field :image
+  = f.error_message_on :image
+  = f.check_box :remove_image
+  = f.label :remove_image, "Check to remove this image"
+
+%div
+  = f.label :alt_text
+  = f.text_field :alt_text
+  = f.error_message_on :alt_text

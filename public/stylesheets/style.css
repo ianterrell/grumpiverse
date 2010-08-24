@@ -203,7 +203,7 @@ h3.title-twitter { font-family: Bigfish, serif; font-size: 32px; width:100%; hei
 
 #featured-tabber #info  {
 	float: none;
-	padding: 10px 0 0 0;
+	padding: 20px 0 10px 0;
 	background: #000 url(/images/tabber_tile.jpg) repeat-x left top;
 }
 
