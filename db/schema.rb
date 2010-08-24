@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100824064952) do
+ActiveRecord::Schema.define(:version => 20100824184326) do
 
   create_table "articles", :force => true do |t|
     t.integer  "author_id"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(:version => 20100824064952) do
     t.datetime "picture_updated_at"
     t.text     "short_description"
     t.integer  "seo_id"
+    t.string   "twitter_token"
+    t.string   "twitter_secret"
   end
 
   create_table "comics", :force => true do |t|

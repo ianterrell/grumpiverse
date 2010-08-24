@@ -17,6 +17,7 @@ gem 'haml'
 gem 'rails3-generators', :group => :development
 
 gem 'RedCloth'
+gem 'twitter'
 
 # Use unicorn as the web server
 # gem 'unicorn'

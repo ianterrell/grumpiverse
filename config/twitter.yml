@@ -1,0 +1,15 @@
+:consumer_key: QRXNwksvs8ic8Pzlx2Bng
+:consumer_secret: itMP09uIf7LlIcZUp855kEeeHMsozscZ0xo5UWmPOYM
+:main_account_token: 161797423-gyTYQvXuKb5bIYIHKp8O4VG9lNaUvidC3GV17GS5
+:main_account_secret: u4b0Qcy83RUTh8bPtdYrcK3LbbiSm5lzASOo7RVDs
+
+# To get a new account token and secret, do the following:
+# Create a new oauth object...
+# > oauth = Twitter::OAuth.new(TWITTER[:consumer_key], TWITTER[:consumer_secret])
+# => #<Twitter::OAuth:0x103020838 @api_endpoint="http://api.twitter.com", @csecret="itMP09uIf7LlIcZUp855kEeeHMsozscZ0xo5UWmPOYM", @ctoken="QRXNwksvs8ic8Pzlx2Bng", @signing_endpoint="http://api.twitter.com", @consumer_options={}> 
+# Log in as who you want, then navigate to the authorize url and grant access
+# > oauth.request_token.authorize_url
+# => "http://api.twitter.com/oauth/authorize?oauth_token=fvkq62j2PAaSALZzS4bDYtJiQr0DgkOEPuXI98FL5A" 
+# Enter the pin and record the token and secret
+# > oauth.authorize_from_request(oauth.request_token.token, oauth.request_token.secret, PIN)
+# => ["token", "secret"] 

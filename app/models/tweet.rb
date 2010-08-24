@@ -45,6 +45,16 @@ class Tweet < ActiveRecord::Base
   end
   
   def publish!
+    oauth = Twitter::OAuth.new(TWITTER[:consumer_key], TWITTER[:consumer_secret])
+    if character 
+      raise "#{self.character.name} needs authorized with Twitter!" unless character.twitter_ready?
+      oauth.authorize_from_access(character.twitter_token, character.twitter_secret)
+    else
+      oauth.authorize_from_access(TWITTER[:main_account_token], TWITTER[:main_account_secret])
+    end
+
+    client = Twitter::Base.new(oauth)
+    client.update tweet
     self.update_attribute :tweeted_at, Time.now
   end
 end

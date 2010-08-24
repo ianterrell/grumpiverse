@@ -11,8 +11,14 @@
 %h3 Avatar
 = image_tag @character.avatar.url(:thumb)
 
-%h3 Twitter Handle
-= link_to @character.twitter_handle, "http://twitter.com/#{@character.twitter_handle}"
+%h3 Twitter
+%p 
+  Tweets from
+  = link_to @character.twitter_handle, "http://twitter.com/#{@character.twitter_handle}"
+
+- if !@character.twitter_ready?
+  %p This character's Twitter account needs authorized from the console:
+  = render :partial => "/admin/characters/twitter_auth"
 
 - content_for :sidebar do
   = link_to "Back", admin_characters_path, :class => "back"

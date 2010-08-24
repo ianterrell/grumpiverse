@@ -1,0 +1,12 @@
+<pre>
+> c = Character.find <%= @character.id %>
+ => #<Character id: <%= @character.id %>, name: "<%= @character.name %>", twitter_handle: "<%= @character.twitter_handle %>", ...
+> c.display_twitter_auth_url
+Log in as <%= @character.twitter_handle %> and then paste this into your browser
+http://api.twitter.com/oauth/authorize?oauth_token=3i9fhkdjh
+ => nil 
+> c.authorize_twitter_with_pin "PIN FROM TWITTER"
+ => true 
+> c.twitter_ready?
+ => true
+</pre>
