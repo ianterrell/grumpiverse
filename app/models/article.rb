@@ -3,6 +3,9 @@ class Article < ActiveRecord::Base
   belongs_to :author, :polymorphic => true
   belongs_to :main_comic, :class_name => "Comic", :foreign_key => "main_comic_id"
   
+  belongs_to :seo
+  accepts_nested_attributes_for :seo
+  
   has_friendly_id :title, :use_slug => true
   
   validates_presence_of :title, :body

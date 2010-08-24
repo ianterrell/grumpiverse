@@ -3,6 +3,9 @@ class Character < ActiveRecord::Base
   
   has_many :articles, :as => :author
   
+  belongs_to :seo
+  accepts_nested_attributes_for :seo
+  
   validates_presence_of :name, :twitter_handle
   
   has_attached_file :avatar, PaperclipStorageHash.merge(:styles => { :big => "120x120>", :medium => "100x100>", :thumb => "80x80>", :small => "60x60>", :tiny => "30x30>" })

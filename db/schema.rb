@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100824051827) do
+ActiveRecord::Schema.define(:version => 20100824054354) do
 
   create_table "articles", :force => true do |t|
     t.integer  "author_id"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20100824051827) do
     t.integer  "main_comic_id"
     t.text     "long_excerpt"
     t.text     "short_excerpt"
+    t.integer  "seo_id"
   end
 
   create_table "characters", :force => true do |t|
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20100824051827) do
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
     t.text     "short_description"
+    t.integer  "seo_id"
   end
 
   create_table "comics", :force => true do |t|
@@ -77,11 +79,17 @@ ActiveRecord::Schema.define(:version => 20100824051827) do
   end
 
   create_table "pages", :force => true do |t|
-    t.string   "title"
     t.string   "slug"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "seo_id"
+  end
+
+  create_table "seos", :force => true do |t|
+    t.string   "title"
     t.string   "keywords"
     t.string   "description"
-    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

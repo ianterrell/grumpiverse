@@ -3,8 +3,8 @@ class PagesController < ApplicationController
   caches_page :show
   def show
     @page = Page.find_by_slug! params[:slug]
-    @title = @page.title
-    @meta_keywords = @page.keywords
-    @meta_description = @page.description
+    @title = @article.seo.try :title
+    @meta_keywords = @article.seo.try :keywords
+    @meta_description = @article.seo.try :description
   end
 end

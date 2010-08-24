@@ -26,3 +26,5 @@
   = f.label :short_excerpt
   = f.text_area :short_excerpt
   = f.error_message_on :short_excerpt
+
+= render :partial => "/shared/seo_fields", :locals => { :f => f }
