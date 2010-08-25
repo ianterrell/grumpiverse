@@ -123,10 +123,10 @@ form#topSearch p.fields button {
 
 #header {
     float: left;
-    padding-top: 40px;
+    padding-top: 60px;
 	clear: both;
 	position: relative;
-	margin-bottom:25px;
+	margin-bottom:-19px;
 }
 
 #header-small {
@@ -164,6 +164,7 @@ h3.title-twitter { font-family: Bigfish, serif; font-size: 32px; width:100%; hei
 /* Featured Tabber */
 
 #featured-tabber  {
+  border-top: 8px solid white;
 	margin: 0 0 40px 0;
 }
 
@@ -832,7 +833,7 @@ float:right;
 height:120px;
 margin-top:40px;
 text-align:right;
-width:350px;
+width:300px;
 
 }
 

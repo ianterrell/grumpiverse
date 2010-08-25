@@ -54,11 +54,7 @@
                   %button.replace{:name => "submit", :type => "submit"}
         #header
           %h1
-            = link_to root_path do
-              %span.welcome Welcome to...
-              %br/
-              %span.the the
-              %span Grumpiverse
+            = link_to image_tag("header.png"), root_path
         #twitter
           %h3.title-twitter Twitter
           %ul#twitter_update_list
