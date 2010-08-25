@@ -126,7 +126,7 @@ form#topSearch p.fields button {
     padding-top: 60px;
 	clear: both;
 	position: relative;
-	margin-bottom:-19px;
+	margin-bottom:10px;
 }
 
 #header-small {
@@ -164,7 +164,6 @@ h3.title-twitter { font-family: Bigfish, serif; font-size: 32px; width:100%; hei
 /* Featured Tabber */
 
 #featured-tabber  {
-  border-top: 8px solid white;
 	margin: 0 0 40px 0;
 }
 
