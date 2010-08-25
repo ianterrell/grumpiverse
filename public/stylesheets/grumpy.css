@@ -47,7 +47,7 @@ ul.cast { display: block; list-style: none; margin: 0px; padding: 0px!important;
 ul.cast li { padding: 8px!important; display: block; margin-bottom: 5px;}
 ul.cast li img { float: left; margin-right: 10px; }
 ul.cast li .name { font-size: 20px; float: left; }
-ul.cast li .desc { float: left; width: 560px;}
+ul.cast li .desc { float: left; width: 550px;}
 ul.cast li .name a { color: white; text-decoration: none!important; }
 
 
