@@ -12,8 +12,6 @@
     = auto_discovery_link_tag(:atom, feedburner)
     / TODO:  Use AssetPackager or Jammit to concat into one CSS file?
     = stylesheet_link_tag "style", "grumpy"
-    / TODO:  Implement RSS and integrate with Feedburner
-    %link{:href => "http://www.grumpiverse.com/feed", :rel => "alternate", :title => "RSS 2.0", :type => "application/rss+xml"}/
     /[if IE 6]
       = javascript_include_tag "pngfix"
       = stylesheet_link_tag "ie6"

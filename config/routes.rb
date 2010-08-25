@@ -1,4 +1,7 @@
 Grumpiverse::Application.routes.draw do
+  # TODO:  Remove!
+  match 'almost', :to => "shield#index", :as => "shield"
+
   devise_for :users
   
   match 'cast', :to => "characters#index"
