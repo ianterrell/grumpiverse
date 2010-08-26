@@ -8,7 +8,7 @@
 %a{:name => "comments"}
 .social
   %h3= sharing_phrase(@article)
-  = tweet_this
+  = tweet_this :text => "Grumpiverse: #{truncate(@article.title, :length => 50)}"
   = render :partial => "/shared/facebook_comments"
 
 .article-navigation
