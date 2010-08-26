@@ -25,6 +25,14 @@ class Article < ActiveRecord::Base
     !!published_at
   end
   
+  def previous
+    Article.where("published_at IS NOT NULL").where("published_at < ?", self.published_at).order("published_at DESC").limit(1).first
+  end
+  
+  def next
+    Article.where("published_at IS NOT NULL").where("published_at > ?", self.published_at).order("published_at ASC").limit(1).first
+  end
+  
   def name
     id
   end

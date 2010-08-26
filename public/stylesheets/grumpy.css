@@ -53,6 +53,12 @@ ul.cast li .name a { color: white; text-decoration: none!important; }
 .article img { display: block; border: 5px solid white; -moz-border-radius: 8px; -webkit-border-radius: 8px; margin: 0px auto 0px auto; }
 .article .comments { display: block; float: right; font-size: 16px; color: white; margin-top: 10px;}
 
+.article-navigation { margin-top: 20px; }
+.next-article { float: right; color: white; display: block; font-size: 14px; width: 300px; text-align: right; text-decoration: none!important; }
+.next-article:hover { text-decoration: underline!important; }
+.previous-article { display: block; color: white; font-size: 14px; width: 300px; text-decoration: none!important; }
+.previous-article:hover { text-decoration: underline!important; }
+
 .character-social { clear: both; margin-top: 10px; background-color: #eee; padding: 10px; -moz-border-radius: 6px; -webkit-border-radius: 6px;}
 
 p.byline img { float: left; margin-right: 10px; }

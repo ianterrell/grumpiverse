@@ -7,3 +7,8 @@
 
 %a{:name => "comments"}
 = render :partial => "/shared/social"
+
+.article-navigation
+  = link_to "Up next: #{@article.next.title} &raquo;".html_safe, @article.next, :class => "next-article" if @article.next
+  = link_to " &laquo; Previous: #{@article.previous.title}".html_safe, @article.previous, :class => "previous-article" if @article.previous
+  .clear
