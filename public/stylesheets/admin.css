@@ -56,3 +56,8 @@ img.avatar-thumb { float: left; margin-right: 10px; }
 .admin ul.tweets li .title a { color: white; text-decoration: none!important;}
 .admin ul.tweets li .author { margin-top: 5px; }
 .admin ul.tweets li .status { margin-top: 5px; font-style: italic; }
+
+.article img { display: block; border: 5px solid white; -moz-border-radius: 8px; -webkit-border-radius: 8px; margin: 0px auto 0px auto; }
+.article .comments { display: block; float: right; font-size: 16px; color: white; margin-top: 10px;}
+.article p.credits { color: #999; }
+.article p.credits a { color: #999; }
