@@ -10,8 +10,8 @@
             %span.date= article.published_at.to_s :full_pretty
           .text
             = article.render
-          %h3.community Share
-          .social
+          .social  
+            %h3= sharing_phrase(article)
             = tweet_this :url => article_url(article)
             = fb_like :href => article_url(article)
           = link_to "Comments &raquo;".html_safe, article_path(article, :anchor => "comments"), :class => "comments"

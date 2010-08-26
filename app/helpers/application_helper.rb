@@ -24,6 +24,15 @@ module ApplicationHelper
     render :partial => "shared/facebook_like", :locals => { :href => options[:href], :options => options }
   end
   
+  def sharing_phrase(object)
+    phrases = ["Sharing cures the grumps.",
+               "Sharing chases the Grumpalope.",
+               "Sharing is caring.",
+               "Sharing makes us &#x2665; you.".html_safe,
+               "Sharing keeps the Grumpalupagus at bay."]
+    phrases[(object.respond_to?(:id) ? object.id : rand(100)) % phrases.size]
+  end
+  
   def feedburner
     # TODO:  Once the site is up, sign up for Feedburner and change the url here
     # "http://feeds.feedburner.com/grumpiverse"
