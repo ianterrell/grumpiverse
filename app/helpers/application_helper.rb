@@ -20,6 +20,10 @@ module ApplicationHelper
     render :partial => "shared/tweet_this", :locals => { :text => options[:text], :url => options[:url], :options => options }
   end
   
+  def fb_like(options = {})
+    render :partial => "shared/facebook_like", :locals => { :href => options[:href], :options => options }
+  end
+  
   def feedburner
     # TODO:  Once the site is up, sign up for Feedburner and change the url here
     # "http://feeds.feedburner.com/grumpiverse"

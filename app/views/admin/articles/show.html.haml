@@ -1,20 +1,7 @@
 %h2= @article.title
 %h3
-  by
+  Featuring
   = @article.author.name
-
-%p
-  %strong Short Excerpt
-  
-= @article.render(:short)
-
-%p
-  %strong Long Excerpt
-  
-= @article.render(:long)
-
-%p
-  %strong Full Article
  
 = @article.render
 

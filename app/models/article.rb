@@ -66,13 +66,7 @@ class Article < ActiveRecord::Base
     self.author = class_name.constantize.find instance_id
   end
   
-  def render(what = nil)
-    copy = case what
-    when :short: short_excerpt
-    when :long: long_excerpt
-    else 
-      body
-    end
-    RedCloth.new(copy.to_s).to_html.html_safe
+  def render
+    RedCloth.new(body.to_s).to_html.html_safe
   end
 end

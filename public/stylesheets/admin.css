@@ -37,8 +37,6 @@
 #article_author_code { margin-bottom: 10px; }
 #article_body, #character_description, #page_body { width: 650px; margin-bottom: 10px; }
 #character_short_description { width: 650px; height: 50px; margin-bottom: 10px; }
-#article_long_excerpt { width: 650px; height: 100px; margin-bottom: 10px; }
-#article_short_excerpt { width: 650px; height: 50px; margin-bottom: 10px; }
 textarea.seo_description { width: 650px; height: 50px; margin-bottom: 10px; }
 .seo_title input, .seo_keywords input { width: 650px; font-size: 14px; display: block; padding: 3px; margin-bottom: 10px; }
 

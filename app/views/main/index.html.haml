@@ -1,29 +1,20 @@
-#featured-tabber
-  #info
-    .img
-      = link_to image_tag(@featured_article.main_comic.image.url(:feature), :alt => "hi there"), @featured_article, :title => @featured_article.main_comic.alt_text
-    .tabber-post
-      %h2
-        = link_to @featured_article.title, @featured_article
-      %p.byline
-        = image_tag @featured_article.author.avatar.url(:tiny)
-        by
-        = link_to @featured_article.author.name, @featured_article.author
-      %p.meta
-        %span.date= @featured_article.published_at.to_s :full_pretty
-      .text
-        = @featured_article.render :long
-        = link_to "Read more...", @featured_article, :class => "read-more"
-    .clear
-  .clear
-  .bottom
-#recent
-  %h3.title-recent Latest Grumps
-  - @recent_grumps.each do |article|
-    %div{:class => "item #{'last' if article == @recent_grumps.last}"}
-      %h4
-        = link_to article.title, article
-      = link_to article_path(article) do
-        = image_tag article.author.avatar.url(:small), :class => "thumbnail"
-      = article.render :short
-  .clear
+.col-left
+  #main.single
+    - @articles.each do |article|
+      .box3-top
+      .post.wrap
+        .article
+          %h2
+            = link_to article.title, article
+          %p.meta
+            %span.date= article.published_at.to_s :full_pretty
+          .text
+            = article.render
+          %h3.community Share
+          .social
+            = tweet_this :url => article_url(article)
+            = fb_like :href => article_url(article)
+          = link_to "Comments &raquo;".html_safe, article_path(article, :anchor => "comments"), :class => "comments"
+      .box3-bot
+
+

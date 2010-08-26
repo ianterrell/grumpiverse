@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100824184326) do
+ActiveRecord::Schema.define(:version => 20100826203209) do
 
   create_table "articles", :force => true do |t|
     t.integer  "author_id"
@@ -25,8 +25,6 @@ ActiveRecord::Schema.define(:version => 20100824184326) do
     t.datetime "published_at"
     t.integer  "delayed_job_id"
     t.integer  "main_comic_id"
-    t.text     "long_excerpt"
-    t.text     "short_excerpt"
     t.integer  "seo_id"
   end
 

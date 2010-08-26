@@ -3,7 +3,7 @@ class Admin::BaseController < ApplicationController
   layout 'admin'
   
   def root
-    redirect_to admin_pages_path
+    redirect_to admin_articles_path
   end
   
   def parse_textile

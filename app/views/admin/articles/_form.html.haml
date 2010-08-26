@@ -17,14 +17,4 @@
   = f.text_area :body
   = f.error_message_on :body
   
-%div
-  = f.label :long_excerpt
-  = f.text_area :long_excerpt
-  = f.error_message_on :long_excerpt
-
-%div
-  = f.label :short_excerpt
-  = f.text_area :short_excerpt
-  = f.error_message_on :short_excerpt
-
 = render :partial => "/shared/seo_fields", :locals => { :f => f }

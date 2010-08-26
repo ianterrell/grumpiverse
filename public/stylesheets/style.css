@@ -167,138 +167,21 @@ h3.title-twitter { font-family: Bigfish, serif; font-size: 32px; width:100%; hei
 	margin: 0 0 40px 0;
 }
 
-#featured-tabber ul.tabber  {
-	margin: 0 0 0 20px;
-}
-
-#featured-tabber ul.tabber li  {
-	display: block;
-	float: left;
-	height: 36px;
-	margin: 0 20px 0 0;
-	line-height: 36px;
-	font-size: 14px;
-	font-weight: bold;
-}
-
-#featured-tabber ul.tabber li a span  {
-	display: block;
-	margin: 0 0 0 -11px;
-	padding: 0 0 0 20px;
-}
-
-#featured-tabber ul.tabber li a:link, #featured-tabber ul.tabber li a:visited  {
-	display: block;
-	padding: 0 20px 0 0;
-	color: #fff;
-}
-
-#featured-tabber ul.tabber li.current a span, #featured-tabber ul.tabber li a:hover span  {
-	background: url(/images/tabberhover_left.png) no-repeat left top;
-}
-
-#featured-tabber ul.tabber li.current a, #featured-tabber ul.tabber li a:hover  {
-	background: url(/images/tabberhover_right.png) no-repeat right top;
-}
+#featured-tabber #info h2 { margin-top: 0px; padding-top: 0px; }
+#featured-tabber #info p.meta { margin-top: 0px; padding-top: 0px; }
+#featured-tabber #info h2 a { color: white; }
 
 #featured-tabber #info  {
 	float: none;
-	padding: 20px 0 10px 0;
+	padding: 20px;
 	background: #000 url(/images/tabber_tile.jpg) repeat-x left top;
 }
 
-#featured-tabber #info .img  {
-	float: left;
-	width: 490px;
-	padding: 0 20px;
+#featured-tabber img {
+  display: block;
+  border: 5px solid white; -moz-border-radius: 8px; -webkit-border-radius: 8px;
+  margin: 0px auto 0px auto;
 }
-
-#featured-tabber #info .img .cats_rss  {
-	float: left;
-	width: 490px;
-	padding: 8px 0 0 0;
-	font-size: 14px;
-	font-weight: bold;
-}
-
-#featured-tabber #info .img .cats_rss img  {
-	border: none!important;
-	vertical-align: middle;
-}
-
-
-#featured-tabber #info .img .cats_rss .category  {
-	float: left;
-}
-
-#featured-tabber #info .img .cats_rss .rss  {
-	float: right;
-}
-
-#featured-tabber #info .img img  {
-	border: 5px solid #fff;
-}
-
-#featured-tabber #info .tabber-post  {
-	float: right;
-	padding: 0 20px 0 0;
-	width: 410px;
-}
-
-#featured-tabber #info .tabber-post h2  {
-	margin: 0;
-	padding: 0;
-}
-
-#featured-tabber #info .tabber-post h2 a:link,
-#featured-tabber #info .tabber-post h2 a:visited  {
-	font-size: 24px;
-	color: #fff;
-}
-
-#featured-tabber #info .tabber-post p.meta  {
-	margin: 4px 0 0 0;
-	padding: 0;
-}
-
-#featured-tabber #info .tabber-post p.meta a:link,
-#featured-tabber #info .tabber-post p.meta a:visited  {
-	color: #fff;
-}
-
-#featured-tabber #info .tabber-post p.meta span.date  {
-	padding: 0 20px 0 18px;
-	background: url(/images/date.png) no-repeat left center;
-}
-
-#featured-tabber #info .tabber-post p.meta span.comments  {
-	padding: 0 0 0 16px;
-	background: url(/images/comments.png) no-repeat left center;
-}
-
-#featured-tabber #info .tabber-post .text p  {
-	color: #aeaeae;
-}
-#featured-tabber #info .tabber-post .ol,
-#featured-tabber #info .tabber-post .ul  {
-     line-height: 18px; 
-}
-     
-     
-#featured-tabber #info .tabber-post ul { padding-left: 50px; }
-#featured-tabber #info .tabber-post ul li { list-style: circle; padding: 3px 0; }
-#featured-tabber #info .tabber-post ol { padding-left: 57px; }
-#featured-tabber #info .tabber-post ol li { list-style: decimal; padding: 3px 0; }
-#featured-tabber #info .tabber-post blockquote {
-    background:url(/images/box3-bg.png) repeat top left;
-    border-left:2px solid #222;
-    color:#fff;
-    font-style:italic;
-    margin:5px auto 5px;
-    padding:10px 20px;
-    width:90%;
-}
-
 
 #featured-tabber .top  {
 	width: 960px;
