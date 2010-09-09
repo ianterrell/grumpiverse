@@ -10,13 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100826203209) do
+ActiveRecord::Schema.define(:version => 20100826223005) do
 
   create_table "articles", :force => true do |t|
-    t.integer  "author_id"
     t.string   "title"
     t.string   "author_type"
-    t.string   "type"
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -27,6 +25,14 @@ ActiveRecord::Schema.define(:version => 20100826203209) do
     t.integer  "main_comic_id"
     t.integer  "seo_id"
   end
+
+  create_table "articles_characters", :id => false, :force => true do |t|
+    t.integer "article_id"
+    t.integer "character_id"
+  end
+
+  add_index "articles_characters", ["article_id"], :name => "index_articles_characters_on_article_id"
+  add_index "articles_characters", ["character_id"], :name => "index_articles_characters_on_character_id"
 
   create_table "characters", :force => true do |t|
     t.string   "name"

@@ -15,7 +15,7 @@ class Admin::ArticlesController < Admin::CrudController
   
   def schedule_for_publication
     @article = Article.find params[:id]
-    if @article.schedule_for_publication_at params[:publish_at]
+    if @article.schedule_for_publication_at(params[:publish_date] + " " + params[:publish_time])
       flash[:notice] = "Scheduled!"
     else
       flash[:alert] = "There was an error.  Dammit.  Make sure this object validates."

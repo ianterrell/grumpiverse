@@ -1,7 +1,7 @@
 class Character < ActiveRecord::Base
   has_friendly_id :name, :use_slug => true
   
-  has_many :articles, :as => :author
+  has_and_belongs_to_many :articles
   
   belongs_to :seo
   accepts_nested_attributes_for :seo

@@ -37,8 +37,11 @@
 #character_tweet ul { padding: 0px !important;}
 #character_tweet ul li { list-style: none!important; padding: 0px!important;}
 
+.character-right h2 { font-size: 16px; }
+
 ul.articles { display: block; list-style: none; margin: 0px; padding: 0px!important;  }
-ul.articles li { padding: 8px!important; display: block; margin-bottom: 5px;}
+ul.articles li { clear: both; padding: 8px!important; display: block; margin-bottom: 5px;}
+ul.articles li img { float: left; margin: 0px 10px 10px 0px; border: 2px solid white; -moz-border-radius: 4px; -webkit-border-radius: 4px; }
 ul.articles li .title { font-size: 20px; }
 ul.articles li .title a { color: white; text-decoration: none!important;}
 ul.articles li .date { font-style: italic; }
@@ -69,3 +72,11 @@ p.byline a { font-weight: bold; color: white; }
 p.meta { clear: both; }
 
 a.read-more { color: white; font-size: 14px; text-decoration: underline;}
+
+#mc-embedded-subscribe-form { border: 2px solid white; background-color: rgba(0,0,0,0.5); -moz-border-radius: 6px; -webkit-border-radius: 6px; }
+#mc-embedded-subscribe-form h3 { font-family: Bigfish, serif; font-size: 28px; width:100%; height:34px; margin-bottom: 0px; padding-bottom: 0px; text-align: center; }
+#mc-embedded-subscribe-form p { margin-top: 0px; padding-top: 0px; text-align: center; }
+#mc-embedded-subscribe-form fieldset { border: none; }
+#mc-embedded-subscribe-form input[type=submit] { float: right; padding: 10px; font-weight: bold; cursor: pointer; color: #FFFFFF; background: #660099; border: 1px solid #550080; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
+#mc-embedded-subscribe-form input[type=text] { font-size: 18px; width: 170px; margin-right: 10px; padding: 4px;}
+#mc-embedded-subscribe-form .initial { color: #999; }

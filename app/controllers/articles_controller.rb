@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   caches_page :show
   def show
     @article = Article.published.find params[:id]
-    @title = @article.seo.try :title
+    @title = @article.seo.try(:title).blank? ? @article.title : @article.seo.title
     @meta_keywords = @article.seo.try :keywords
     @meta_description = @article.seo.try :description
   end

@@ -1,5 +1,5 @@
 class Comic < ActiveRecord::Base
-  has_attached_file :image, PaperclipStorageHash.merge(:styles => { :main => "660>x660", :feature => "480>x480", :thumb => "80>x80" })
+  has_attached_file :image, PaperclipStorageHash.merge(:styles => { :main => "650>x650", :thumb => "80>x80" })
   
   validates_attachment_presence :image
   validates_presence_of :alt_text

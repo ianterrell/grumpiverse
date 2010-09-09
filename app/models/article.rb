@@ -1,6 +1,6 @@
 class Article < ActiveRecord::Base
   belongs_to :delayed_job, :class_name => "::Delayed::Job", :foreign_key => "delayed_job_id"
-  belongs_to :author, :polymorphic => true
+  has_and_belongs_to_many :characters
   belongs_to :main_comic, :class_name => "Comic", :foreign_key => "main_comic_id"
   
   belongs_to :seo

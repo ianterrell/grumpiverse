@@ -4,9 +4,9 @@
   = f.error_message_on :title
 
 %div
-  = f.label :author_code, "by"
-  = f.select :author_code, grouped_options_for_select(article_author_grouped_options, f.object.author_code)
-  = f.error_message_on :author_code
+  = f.label :character_ids, "Featuring"
+  = f.select :character_ids, options_from_collection_for_select(Character.all, :id, :name, f.object.character_ids), {}, :multiple => true
+  = f.error_message_on :character_ids
 
 %div
   = f.label :main_comic_id

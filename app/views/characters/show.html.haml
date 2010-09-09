@@ -1,5 +1,3 @@
-%h1= @character.name
-
 .character-left
   = image_tag @character.picture.url, :class => "character"
 
@@ -19,20 +17,22 @@
   = link_to "Buy a #{@character.name} t-shirt!", "#"
   
 .character-right
+  %h1= @character.name
   = @character.render_description
 
-  %h2 Recent Articles
-  - if @recent_articles.empty?
-    %p
-      = @character.name
-      hasn't published any articles yet!
-  - else
+  .clear
+  
+  - unless @recent_articles.empty?
+    %h3 Recently Featured In...
     %ul.articles
       - @character.articles.published.limit(5).each do |article|
         %li
+          - if article.main_comic
+            = image_tag article.main_comic.image.url(:thumb)
           .title= link_to article.title, article
           .date= article.published_at.to_s(:full_pretty)
-
+    .clear
+    
 .character-social
   = tweet_this :follow => @character.twitter_handle
   = render :partial => "/shared/facebook_comments"

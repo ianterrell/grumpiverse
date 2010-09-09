@@ -7,12 +7,13 @@
   %h3 Drafts
   %ul.articles
     = render @drafts
-
+  .clear
+  
 - @scheduled_articles.group_by(&:scheduled_publication_day).each do |day, articles|
   %h3= day
   %ul.articles
     = render articles
-      
+  .clear
 
 
 - content_for :sidebar do
