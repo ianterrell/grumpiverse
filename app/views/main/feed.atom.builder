@@ -15,10 +15,6 @@ atom_feed do |feed|
         body += article.render
         entry.cdata!(body) 
       end
-
-      entry.author do |author|
-        author.name article.author.name
-      end
     end
   end
 end
