@@ -13,6 +13,7 @@ gem 'inherited_resources', '1.1.2'
 gem 'friendly_id', '~> 3.0'
 gem 'will_paginate', '3.0.pre'
 gem 'delayed_job'
+gem 'daemons', '1.0.10'
 gem 'haml'
 gem 'rails3-generators', :group => :development
 
