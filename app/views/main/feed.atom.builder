@@ -7,13 +7,8 @@ atom_feed do |feed|
     feed.entry(article) do |entry|
       entry.title article.title
       
-      entry.summary do 
-        body = ""
-        if article.main_comic
-          body += image_tag article.main_comic.image.url(:feature)
-        end
-        body += article.render
-        entry.cdata!(body) 
+      entry.summary do
+        entry.cdata!(article.render) 
       end
     end
   end
