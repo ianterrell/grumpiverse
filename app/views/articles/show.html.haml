@@ -1,8 +1,5 @@
 .article
   %h2= @article.title
-  %h3
-    by
-    = @article.author.name
   = @article.render
 
 %a{:name => "comments"}
