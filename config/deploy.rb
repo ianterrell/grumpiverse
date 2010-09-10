@@ -24,6 +24,7 @@ set :deploy_to,      "/home/deploy/#{application}"
 
 after "deploy:update_code","deploy:symlink_configs"
 after "deploy:update_code","deploy:cleanup"
+after "deploy:update_code","delayed_job:restart"
 # after "deploy:update_code","deploy:package_assets"
 
 # =============================================================================
@@ -54,6 +55,24 @@ namespace(:deploy) do
       puts "#{channel[:server]} -> #{data}" 
       break if stream == :err    
     end
+  end
+end
+
+# =============================================================================
+namespace :delayed_job do 
+  desc "Start delayed_job worker on the app server."
+  task :start, :roles => :app do
+    sudo "monit start delayed_job"
+  end
+
+  desc "Restart the delayed_job worker on the app server."
+  task :restart , :roles => :app do
+    sudo "monit restart delayed_job"
+  end
+
+  desc "Stop the delayed_job worker on the app server."
+  task :stop , :roles => :app do
+    sudo "monit stop delayed_job"
   end
 end
 
