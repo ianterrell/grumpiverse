@@ -6,9 +6,9 @@ atom_feed do |feed|
   @articles.each do |article|
     feed.entry(article) do |entry|
       entry.title article.title
-      
-      entry.summary do
-        entry.cdata!(article.render) 
+      entry.author "Grumpiverse Staff"
+      entry.summary :type => "html" do
+        entry.cdata!(article.render)
       end
     end
   end
