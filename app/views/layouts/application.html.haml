@@ -31,16 +31,15 @@
             %ul#nav
               %li{:class => "page_item #{'current_page_item' if controller_name == 'main' && action_name == 'index'}"}
                 = link_to "Home", root_path
-              %li.page_item
-                %a{:href => "#", :title => "Shop"} Shop
+              /
+                %li.page_item
+                  %a{:href => "#", :title => "Shop"} Shop
               %li{:class => "page_item #{'current_page_item' if controller_name == 'characters' && action_name == 'index'}"}
                 = link_to "Cast", cast_path
                 %ul.children
                   - Character.all.each do |character|
                     %li{:class => "page_item #{'current_page_item' if params[:id] == character.friendly_id}"}
                       = link_to character.name, character_path(:id => character.friendly_id)
-              %li.page_item
-                %a{:href => "#", :title => "Causes"} Causes
               %li.page_item
                 = link_to "About", page_path(:slug => "about")
           .fr
