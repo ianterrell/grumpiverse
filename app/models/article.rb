@@ -6,7 +6,7 @@ class Article < ActiveRecord::Base
   belongs_to :seo
   accepts_nested_attributes_for :seo
   
-  has_friendly_id :title, :use_slug => true, :approximate_ascii => true
+  has_friendly_id :title, :use_slug => true, :approximate_ascii => true, :strip_non_ascii => true
   
   validates_presence_of :title, :body
   
