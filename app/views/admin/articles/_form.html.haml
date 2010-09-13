@@ -10,7 +10,7 @@
 
 %div
   = f.label :main_comic_id
-  = f.select :main_comic_id, options_for_select(Comic.recent.map{|c|[c.alt_text,c.id]})
+  = f.select :main_comic_id, options_for_select(Comic.recent.map{|c|[c.alt_text,c.id]}, f.object.main_comic_id)
   = f.error_message_on :main_comic_id
 
 %div
