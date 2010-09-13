@@ -1,5 +1,7 @@
 .article
   %h2= @article.title
+  %p.meta
+    %span.date= @article.published_at.to_s :full_pretty
   = @article.render
 
 %a{:name => "comments"}

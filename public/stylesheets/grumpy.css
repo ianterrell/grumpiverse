@@ -55,7 +55,8 @@ ul.cast li .name a { color: white; text-decoration: none!important; }
 
 .article img { display: block; border: 5px solid white; -moz-border-radius: 8px; -webkit-border-radius: 8px; margin: 0px auto 0px auto; }
 .article .comments { display: block; float: right; font-size: 16px; color: white; margin-top: 10px;}
-
+.article h2 { margin-bottom: 0px; padding-bottom: 5px; }
+.article p.meta { margin-top: 0px; padding-top: 0px; padding-bottom: 0px; color: #ddd; }
 .article p.credits { color: #999; }
 .article p.credits a { color: #999; }
 
