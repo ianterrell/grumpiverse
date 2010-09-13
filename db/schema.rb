@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100826223005) do
+ActiveRecord::Schema.define(:version => 20100913225049) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -53,6 +53,10 @@ ActiveRecord::Schema.define(:version => 20100826223005) do
     t.integer  "seo_id"
     t.string   "twitter_token"
     t.string   "twitter_secret"
+    t.string   "gram_file_name"
+    t.string   "gram_content_type"
+    t.integer  "gram_file_size"
+    t.datetime "gram_updated_at"
   end
 
   create_table "comics", :force => true do |t|

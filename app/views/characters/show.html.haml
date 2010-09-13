@@ -8,13 +8,18 @@
     or
     = link_to "follow the cast!", "http://twitter.com/grumpiverse/lists/cast"
   
-  %br
-  / TODO: Make this a pretty button, make sure all the peeps line up, implement this feature in grumpygrams
-  = link_to "Send a #{@character.name} GrumpyGram!", "http://www.grumpygrams.com/#send-#{@character.friendly_id}"
-  
-  %br
-  / TODO: Make this a pretty button, implement shop
-  = link_to "Buy a #{@character.name} t-shirt!", "#"
+    %br
+    = link_to image_tag(@character.gram.url(:thumb)), "http://www.grumpygrams.com/#send_#{@character.friendly_id}"
+    %br
+    = link_to "http://www.grumpygrams.com/#send-#{@character.friendly_id}" do
+      Send your Facebook friends a
+      %br
+      = @character.name
+      GrumpyGram!
+    %br
+    / TODO: Make this a pretty button, implement shop
+    /
+      = link_to "Buy a #{@character.name} t-shirt!", "#"
   
 .character-right
   %h1= @character.name
@@ -33,7 +38,8 @@
           .date= article.published_at.to_s(:full_pretty)
     .clear
     
-.character-social
+.social
+  %h3= sharing_phrase(@character)
   = tweet_this :follow => @character.twitter_handle
   = render :partial => "/shared/facebook_comments"
 

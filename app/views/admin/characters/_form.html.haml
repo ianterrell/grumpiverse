@@ -20,6 +20,14 @@
   = f.label :remove_avatar, "Check to remove this avatar"
 
 %div
+  = image_tag f.object.gram.url(:thumb) if f.object.gram?
+  = f.label :gram
+  = f.file_field :gram
+  = f.error_message_on :gram
+  = f.check_box :remove_gram
+  = f.label :remove_gram, "Check to remove this gram"
+
+%div
   = f.label :twitter_handle
   = f.text_field :twitter_handle
   = f.error_message_on :twitter_handle

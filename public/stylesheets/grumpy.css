@@ -33,6 +33,7 @@
 .character-left a.follow { width: 100%; text-align: center; display: block; margin-top: 10px; }
 .character-left .follow-links { width: 100%; text-align: center; display: block; margin-top: 10px; }
 .character-left .follow-links a { color: #44a7ec; font-weight: bold; text-decoration: none; }
+.character-left .follow-links img { margin: 20px 0px 5px 0px!important; border: 3px solid white; -moz-border-radius: 4px; -webkit-border-radius: 4px; }
 #character_tweet { width: 300px; color: black; float: left; margin: 0px!important; padding: 10px; background-color: white; border: 2px solid #c2ecf7; -moz-border-radius: 6px; -webkit-border-radius: 6px; display: block; }
 #character_tweet ul { padding: 0px !important;}
 #character_tweet ul li { list-style: none!important; padding: 0px!important;}
@@ -59,6 +60,8 @@ ul.cast li .name a { color: white; text-decoration: none!important; }
 .article p.meta { margin-top: 0px; padding-top: 0px; padding-bottom: 0px; color: #ddd; }
 .article p.credits { color: #999; }
 .article p.credits a { color: #999; }
+
+
 
 .article-navigation { margin-top: 20px; }
 .next-article { float: right; color: white; display: block; font-size: 14px; width: 300px; text-align: right; text-decoration: none!important; }
