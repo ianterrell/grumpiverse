@@ -47,7 +47,13 @@
   = render :partial => "/shared/facebook_comments"
   
 .character-navigation
-  = link_to "#{@character.next.name} &raquo;".html_safe, @character.next, :class => "next-character" if @character.next
-  = link_to "&laquo; #{@character.previous.name}".html_safe, @character.previous, :class => "previous-character" if @character.previous
+  - if @character.next
+    = link_to "#{@character.next.name} &raquo;".html_safe, @character.next, :class => "next-character" 
+  - else
+    = link_to "#{Character.all.first.name} &raquo;".html_safe, Character.all.first, :class => "next-character" 
+  - if @character.previous
+    = link_to "&laquo; #{@character.previous.name}".html_safe, @character.previous, :class => "previous-character" 
+  - else
+    = link_to "&laquo; #{Character.all.last.name}".html_safe, Character.all.last, :class => "previous-character" 
   .clear
 
