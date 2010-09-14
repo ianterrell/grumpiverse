@@ -617,7 +617,7 @@ h3.title-twitter { font-family: Bigfish, serif; font-size: 32px; width:100%; hei
 } 
 #features-top {	margin:0; padding:0; width:941px; height:11px; }
 #features {
-	margin:0 0 30px; padding:20px 25px;
+	margin:0 0 30px; padding:20px 20px;
 	width:881px; height:auto;
 	overflow:hidden;
 	-moz-border-radius: 6px;
