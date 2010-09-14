@@ -63,6 +63,7 @@ class Article < ActiveRecord::Base
   
   def publish!
     self.update_attribute :published_at, Time.now
+    Cache.nuke!
   end
   
   def author_code

@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
   layout 'content'
+  
   caches_page :show
+  
   def show
     @article = Article.published.find params[:id]
     @title = @article.seo.try(:title).blank? ? @article.title : @article.seo.title

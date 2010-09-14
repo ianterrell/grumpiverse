@@ -8,7 +8,6 @@ Grumpiverse::Application.routes.draw do
   match 'cast/:id', :to => "characters#show", :as => "character"
   
   resources :articles, :only => :show
-  resources :users, :only => :show
 
   namespace :admin do
     resources :characters do
@@ -39,6 +38,7 @@ Grumpiverse::Application.routes.draw do
       end
     end
     match "textile", :to => "base#parse_textile"
+    match "nuke", :to => "base#nuke_cache"
     root :to => "base#root"
   end
 

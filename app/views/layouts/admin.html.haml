@@ -36,6 +36,9 @@
                 = link_to "Tweets", admin_tweets_path
               / %li{:class => "page_item #{'current_page_item' if controller_name == "grams"}"}
               /   = link_to "Grams", admin_grams_path
+              %li{:class => "nuke"}
+                = link_to "Nuke Cache", admin_nuke_path, :confirm => "Are you sure?", :method => :post, :class => "nuke"
+              .clear
         #header
           = display_flash :notice, :alert
           %h1

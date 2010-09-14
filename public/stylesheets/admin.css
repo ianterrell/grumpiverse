@@ -65,3 +65,7 @@ img.avatar-thumb { float: left; margin-right: 10px; }
 
 #publish_date { width: 80px;}
 #publish_time { width: 30px;}
+
+#nav { width: 910px;}
+li.nuke { float: right!important; }
+a.nuke:hover { background: red!important; color: white!important; }

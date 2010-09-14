@@ -1,5 +1,7 @@
 class CharactersController < ApplicationController
   layout 'content'
+
+  caches_page :index, :show
   
   def index
     @characters = Character.all
