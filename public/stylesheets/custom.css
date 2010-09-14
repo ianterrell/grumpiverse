@@ -18,8 +18,13 @@ You need to use .custom before every style e.g.
 
 #quotes .quote-entry {display: none;}
 
-@font-face { font-family: Bigfish; src: url("/fonts/Bigfish.eot") /* EOT file for IE */ }
-@font-face { font-family: Bigfish; src: url("/fonts/Bigfish.ttf") /* TTF file for CSS3 browsers */ }
+@font-face {
+	font-family: Bigfish;
+	src: url("/fonts/Bigfish.eot");
+	src: local("☺"),
+	  url("/fonts/Bigfish.ttf") format("truetype"),
+	  url("/fonts/Bigfish.svg#Bigfish") format("svg");
+}
 
 #header h1 { font-family: Bigfish, serif; font-size: 64px; padding: 0px; margin-top: -30px; }
 #header h1 span { color: white; }
