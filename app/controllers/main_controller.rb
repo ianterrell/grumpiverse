@@ -1,6 +1,4 @@
-class MainController < ApplicationController
-  skip_before_filter :shield, :only => :feed
-  
+class MainController < ApplicationController  
   caches_page :index, :feed, :sitemap
   
   def index
