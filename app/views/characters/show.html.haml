@@ -22,7 +22,7 @@
       = link_to "Buy a #{@character.name} t-shirt!", "#"
   
 .character-right
-  = link_to "Back to the characters", character_path, :class => "back"
+  = link_to "Back to the characters", cast_path, :class => "back"
   
   %h1= @character.name
   = @character.render_description
