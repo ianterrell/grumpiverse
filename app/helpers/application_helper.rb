@@ -36,4 +36,15 @@ module ApplicationHelper
   def feedburner
     "http://feeds.feedburner.com/grumpiverse"
   end
+  
+  def archive_links
+    links = []
+    t = Time.now
+    while t >= Article::FirstMonth
+      count = Article.published_in_month(t).count
+      links << { :year => t.year, :month => t.month, :name => t.strftime("%B %Y"), :count => count } unless count == 0
+      t = t - 1.month
+    end
+    links
+  end
 end

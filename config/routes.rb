@@ -7,6 +7,7 @@ Grumpiverse::Application.routes.draw do
   match 'cast', :to => "characters#index"
   match 'cast/:id', :to => "characters#show", :as => "character"
   
+  match 'archive/:year/:month', :to => "articles#archive", :year => Time.now.year, :month => Time.now.month, :as => "archive"
   resources :articles, :only => :show
 
   namespace :admin do
