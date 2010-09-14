@@ -77,7 +77,7 @@
             #tab-2.clearfix
               #featured-articles
                 - featured_articles.each do |article|
-                  = link_to image_tag(article.main_comic.image.url(:thumb), :title => article.title), article_path(article)
+                  = link_to image_tag(article.main_comic.image.url(:featured), :title => article.title), article_path(article)
           .wrap
             .block.left
             .block.middle
