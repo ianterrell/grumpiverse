@@ -10,7 +10,7 @@
 
 %div
   = f.label :main_comic_id
-  = f.select :main_comic_id, options_for_select((Comic.recent | [f.object.try(:main_comic)]).map{|c|[c.alt_text.truncate(93), c.id]}, f.object.main_comic_id)
+  = f.select :main_comic_id, options_for_select(comics_to_choose_from_for_article(f.object).map{|c|[c.alt_text.truncate(93), c.id]}, f.object.main_comic_id)
   = f.error_message_on :main_comic_id
 
 %div
