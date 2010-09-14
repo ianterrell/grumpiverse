@@ -32,6 +32,14 @@ class Character < ActiveRecord::Base
     !self.twitter_token.blank? && !self.twitter_secret.blank?
   end
   
+  def previous
+    Character.where("created_at < ?", self.created_at).order("created_at DESC").limit(1).first
+  end
+  
+  def next
+    Character.where("created_at > ?", self.created_at).order("created_at ASC").limit(1).first
+  end
+  
   # Steps to authorize a character!
   # > c = Character.find 1
   #  => #<Character id: 1, name: "Grumpalupagus", twitter_handle: "grumpalupagus", ...

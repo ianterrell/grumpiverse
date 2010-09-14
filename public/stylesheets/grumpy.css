@@ -28,7 +28,7 @@
 .social { margin-top: 10px; background-color: #eee; padding: 10px; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
 .social h3 { margin: -10px 0px 0px 0px; color: #999; width: 500px; float: right; text-align: right; padding-right: 10px; }
 
-.character-left { float: left; margin-bottom: 10px;}
+.character-left { float: left; margin-bottom: 10px; padding-top: 25px; }
 .character-left img { margin-right: 10px; }
 .character-left a.follow { width: 100%; text-align: center; display: block; margin-top: 10px; }
 .character-left .follow-links { width: 100%; text-align: center; display: block; margin-top: 10px; }
@@ -38,7 +38,17 @@
 #character_tweet ul { padding: 0px !important;}
 #character_tweet ul li { list-style: none!important; padding: 0px!important;}
 
+.character-right h1 { padding-top: 25px; }
 .character-right h2 { font-size: 16px; }
+
+.character-right a.back   { color: white; padding-left: 18px; background:transparent url(/images/icons/16x16/back.png)   0px 50% no-repeat; text-decoration: none!important; float: right; }
+.character-right a:hover { color: #000; }
+
+.character-navigation { margin-top: 20px; }
+.next-character { float: right; color: white; display: block; font-size: 14px; width: 300px; text-align: right; text-decoration: none!important; }
+.next-character:hover { text-decoration: underline!important; }
+.previous-character { display: block; color: white; font-size: 14px; width: 300px; text-decoration: none!important; }
+.previous-character:hover { text-decoration: underline!important; }
 
 ul.articles { display: block; list-style: none; margin: 0px; padding: 0px!important;  }
 ul.articles li { clear: both; padding: 8px!important; display: block; margin-bottom: 5px;}

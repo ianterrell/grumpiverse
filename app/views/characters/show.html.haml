@@ -22,6 +22,8 @@
       = link_to "Buy a #{@character.name} t-shirt!", "#"
   
 .character-right
+  = link_to "Back to the characters", character_path, :class => "back"
+  
   %h1= @character.name
   = @character.render_description
 
@@ -42,4 +44,9 @@
   %h3= sharing_phrase(@character)
   = tweet_this :follow => @character.twitter_handle
   = render :partial => "/shared/facebook_comments"
+  
+.character-navigation
+  = link_to "Up next: #{@character.next.name} &raquo;".html_safe, @character.next, :class => "next-character" if @character.next
+  = link_to " &laquo; Previous: #{@character.previous.name}".html_safe, @character.previous, :class => "previous-character" if @character.previous
+  .clear
 
