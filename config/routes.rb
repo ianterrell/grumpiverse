@@ -43,6 +43,7 @@ Grumpiverse::Application.routes.draw do
   end
 
   match "feed.:format", :to => "main#feed", :as => "feed"
+  match "sitemap.:format", :to => "main#sitemap"
   root :to => "main#index"
 
   match '*slug', :to => 'pages#show', :as => "page"
