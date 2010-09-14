@@ -12,6 +12,8 @@ class Article < ActiveRecord::Base
   
   validates_presence_of :title, :body
   
+  scope :favorite, where(:favorite => true)
+  
   scope :drafts, where("scheduled_for_publication_at IS NULL").order("updated_at DESC")
   def draft?
     !scheduled? && !published?

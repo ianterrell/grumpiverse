@@ -76,7 +76,7 @@
             %h3 Favorite Grumps
             #tab-2.clearfix
               #featured-articles
-                - featured_articles.each do |article|
+                - featured_articles(8).each do |article|
                   = link_to image_tag(article.main_comic.image.url(:favorite), :title => article.title), article_path(article)
           .wrap
             .block.left
