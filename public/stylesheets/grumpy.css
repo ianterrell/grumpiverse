@@ -102,7 +102,7 @@ a.read-more { color: white; font-size: 14px; text-decoration: underline;}
 #tw-cast-sidebar:hover { color: #44a7ec!important; text-decoration: underline; }
 #gg-sidebar { display: block; width: 220px; height: 231px; background:#5d9fc0 url(/images/gg-sidebar.png) no-repeat top left; border: 5px solid white; -moz-border-radius: 6px; -webkit-border-radius: 6px; cursor: hand; margin-bottom: 20px; }
 
-#featured-articles div.group { clear: both; margin-bottom: 20px; }
+#featured-articles div.group { clear: both; margin-top: 0px!important; padding-top: 0px!important; margin-bottom: 20px!important; }
 #featured-articles a { padding: 0px; }
 #featured-articles a img { padding: 0px; border: 2px solid white; -moz-border-radius: 4px; -webkit-border-radius: 4px; display: block; margin: 0px 20px 0px 0px; }
 
