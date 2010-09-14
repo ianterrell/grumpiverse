@@ -99,6 +99,7 @@ GEM
     net-ssh (2.0.23)
     net-ssh-gateway (1.0.1)
       net-ssh (>= 1.99.1)
+    newrelic_rpm (2.13.1)
     oauth (0.4.3)
     polyglot (0.3.1)
     rack (1.2.1)
@@ -163,6 +164,7 @@ DEPENDENCIES
   haml
   inherited_resources (= 1.1.2)
   mysql (= 2.8.1)
+  newrelic_rpm
   paperclip!
   rails (= 3.0.0)
   rails3-generators
