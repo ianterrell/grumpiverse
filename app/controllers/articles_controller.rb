@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   layout 'content'
   
-  caches_page :show
+  caches_page :show, :archive
   
   def show
     @article = Article.published.find params[:id]
