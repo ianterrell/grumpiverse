@@ -1,4 +1,6 @@
 class Article < ActiveRecord::Base
+  FirstMonth = Time.parse "2010/08"
+  
   belongs_to :delayed_job, :class_name => "::Delayed::Job", :foreign_key => "delayed_job_id"
   has_and_belongs_to_many :characters
   belongs_to :main_comic, :class_name => "Comic", :foreign_key => "main_comic_id"
@@ -21,6 +23,7 @@ class Article < ActiveRecord::Base
   end
   
   scope :published, where("published_at IS NOT NULL").order("published_at DESC")
+  scope :published_in_month, lambda { |d| where(:published_at  => d.beginning_of_month..d.end_of_month) }  
   def published?
     !!published_at
   end
@@ -39,6 +42,10 @@ class Article < ActiveRecord::Base
   
   def scheduled_publication_day
     scheduled_for_publication_at.to_s :pretty
+  end
+  
+  def published_day
+    published_at.to_date
   end
   
   def schedule_for_publication_at(publish_at)

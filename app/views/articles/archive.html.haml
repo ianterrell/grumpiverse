@@ -1,0 +1,22 @@
+%h1 
+  Archive for 
+  = @month.strftime("%B %Y")
+  
+- @articles.group_by(&:published_day).sort{|x,y|y[0]<=>x[0]}.each do |day, articles|
+  %h3= day.to_s :pretty
+  %ul.articles
+    - articles.each do |article|
+      %li
+        - if article.main_comic
+          = link_to image_tag(article.main_comic.image.url(:thumb)), article
+        .title= link_to article.title, article
+        .clear
+  .clear
+
+%br
+%br
+.article_navigation
+  - if (older = @month - 1.month) >= Article::FirstMonth
+    = link_to "Archive for #{older.strftime("%B %Y")} &raquo;".html_safe, archive_path(:year => older.year, :month => older.month), :class => "next-article"
+  - if (newer = @month + 1.month).beginning_of_month <= Time.now.beginning_of_month
+    = link_to "&laquo; Archive for #{newer.strftime("%B %Y")}".html_safe, archive_path(:year => newer.year, :month => newer.month), :class => "previous-article"

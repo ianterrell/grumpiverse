@@ -33,9 +33,10 @@
       - @character.articles.published.limit(5).each do |article|
         %li
           - if article.main_comic
-            = image_tag article.main_comic.image.url(:thumb)
+            = link_to image_tag(article.main_comic.image.url(:thumb)), article
           .title= link_to article.title, article
           .date= article.published_at.to_s(:full_pretty)
+          .clear
     .clear
     
 .social
