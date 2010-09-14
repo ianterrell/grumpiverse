@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  FirstMonth = Time.parse "2010/09"
+  FirstMonth = Time.parse "2010/08"
   
   belongs_to :delayed_job, :class_name => "::Delayed::Job", :foreign_key => "delayed_job_id"
   has_and_belongs_to_many :characters
