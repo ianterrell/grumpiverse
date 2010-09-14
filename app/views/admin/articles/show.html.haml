@@ -2,6 +2,10 @@
 %h3
   Featuring
   = @article.characters.map{|x|x.name}.join(", ")
+%h4
+  - if @article.favorite?
+    Currently a favorite!
+  
 .article
   = @article.render
 

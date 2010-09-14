@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100913225049) do
+ActiveRecord::Schema.define(:version => 20100914200908) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20100913225049) do
     t.integer  "delayed_job_id"
     t.integer  "main_comic_id"
     t.integer  "seo_id"
+    t.boolean  "favorite"
   end
 
   create_table "articles_characters", :id => false, :force => true do |t|
