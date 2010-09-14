@@ -73,10 +73,11 @@
         #bottom.wrap
           #features-top
           #features
+            %h3 Favorites
             #tab-2.clearfix
-            /
-              %a{:href => "http://www.grumpiverse.com/?p=1", :title => "Permanent Link to Poor People"}
-                %img.thumbnail{:alt => "Poor People", :src => "http://www.grumpiverse.com/wp-content/themes/groovyblog/thumb.php?src=http://www.grumpiverse.com/wp-content/uploads/1-lindsay_cathedral.png&h=80&w=80&zc=1&q=90"}/
+              #featured-articles
+                - featured_articles.each do |article|
+                  = link_to image_tag(article.main_comic.image.url(:thumb), :title => article.title), article_path(article)
           .wrap
             .block.left
             .block.middle

@@ -17,4 +17,9 @@
   = f.text_area :body
   = f.error_message_on :body
   
+%div
+  = f.label :favorite
+  = f.check_box :favorite
+  = f.error_message_on :favorite
+  
 = render :partial => "/shared/seo_fields", :locals => { :f => f }
