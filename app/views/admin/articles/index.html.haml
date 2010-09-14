@@ -9,10 +9,10 @@
     = render @drafts
   .clear
   
-- @scheduled_articles.group_by(&:scheduled_publication_day).each do |day, articles|
-  %h3= day
+- @scheduled_articles.group_by(&:scheduled_publication_day).sort{|x,y|x[0]<=>y[0]}.each do |day, articles|
+  %h3= day.to_s :pretty
   %ul.articles
-    = render articles
+    = render articles.sort{|x,y|x.scheduled_for_publication_at <=> y.scheduled_for_publication_at}
   .clear
 
 

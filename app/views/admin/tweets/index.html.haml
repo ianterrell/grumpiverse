@@ -3,10 +3,10 @@
     No tweets!  
     = link_to "Better get to work.", new_admin_tweet_path
 - else
-  - @tweets.group_by(&:scheduled_publication_day).each do |day, tweets|
-    %h3= day
+  - @tweets.group_by(&:scheduled_publication_day).sort{|x,y|x[0]<=>y[0]}.each do |day, tweets|
+    %h3= day.to_s :pretty
     %ul.tweets
-      = render tweets
+      = render tweets.sort{|x,y|x.scheduled_for_publication_at <=> y.scheduled_for_publication_at}
       
   = will_paginate @tweets if @tweets.respond_to? :total_pages
 

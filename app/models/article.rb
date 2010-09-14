@@ -41,7 +41,7 @@ class Article < ActiveRecord::Base
   end
   
   def scheduled_publication_day
-    scheduled_for_publication_at.to_s :pretty
+    scheduled_for_publication_at.to_date
   end
   
   def published_day
