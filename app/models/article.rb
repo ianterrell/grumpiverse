@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  FirstMonth = Time.parse "2010/09"
+  FirstMonth = Time.parse "2010/08"
   
   belongs_to :delayed_job, :class_name => "::Delayed::Job", :foreign_key => "delayed_job_id"
   has_and_belongs_to_many :characters
@@ -41,7 +41,7 @@ class Article < ActiveRecord::Base
   end
   
   def scheduled_publication_day
-    scheduled_for_publication_at.to_s :pretty
+    scheduled_for_publication_at.to_date
   end
   
   def published_day

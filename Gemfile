@@ -21,6 +21,7 @@ gem 'RedCloth'
 gem 'twitter'
 
 gem 'capistrano'
+gem 'newrelic_rpm'
 
 # Use unicorn as the web server
 # gem 'unicorn'

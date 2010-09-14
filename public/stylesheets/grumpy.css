@@ -41,8 +41,8 @@
 .character-right h1 { padding-top: 25px; }
 .character-right h2 { font-size: 16px; }
 
-.character-right a.back   { color: white; padding-left: 18px; background:transparent url(/images/icons/16x16/back.png)   0px 50% no-repeat; text-decoration: none!important; float: right; }
-.character-right a:hover { color: #000; }
+.character-right a.back { color: white; text-decoration: none!important; float: right; }
+.character-right a.back:hover { color: white; text-decoration: underline!important;}
 
 .character-navigation { margin-top: 20px; }
 .next-character { float: right; color: white; display: block; font-size: 14px; width: 300px; text-align: right; text-decoration: none!important; }
