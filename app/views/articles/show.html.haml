@@ -1,8 +1,16 @@
+- content_for :additional_ads do
+  %script{:type=>'text/javascript'}
+    GA_googleAddSlot("ca-pub-6399676543813921", "Grumpiverse_ArticleBottom");
+
 .article
   %h2= @article.title
   %p.meta
     %span.date= @article.published_at.to_s :full_pretty
   = @article.render
+  
+  #article-ad
+    %script{:type=>'text/javascript'}
+      GA_googleFillSlot("Grumpiverse_ArticleBottom");
 
 %a{:name => "comments"}
 .social

@@ -3,6 +3,9 @@
 = link_to "or follow the whole cast!", "http://twitter.com/grumpiverse/lists/cast", :id => "tw-cast-sidebar"
 = link_to "", "http://www.grumpygrams.com", :id => "gg-sidebar"
 
+#sidebar-ad
+  = render :partial => "/layouts/sidebar_ad"
+
 %h3.archives Archives
 %ul.archives
   - archive_links.each do |link|

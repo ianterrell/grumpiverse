@@ -20,9 +20,12 @@
     %link{:href => "http://www.grumpiverse.com", :rel => "index", :title => "Grumpiverse"}/
     = csrf_meta_tag
     = render :partial => "/layouts/analytics_js"
+    = render :partial => "/layouts/ads_js"
   %body
     #fb-root
     = render :partial => "/layouts/facebook_js"
+    #top-ad
+      = render :partial => "/layouts/top_ad"
     #wrap
       #top
         / Page Nav Starts
