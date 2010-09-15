@@ -9,7 +9,7 @@
     = link_to "follow the cast!", "http://twitter.com/grumpiverse/lists/cast"
   
     %br
-    = link_to image_tag(@character.gram.url(:thumb)), "http://www.grumpygrams.com/#send_#{@character.friendly_id}"
+    = link_to image_tag(@character.gram.url(:thumb)), "http://www.grumpygrams.com/#send-#{@character.friendly_id}"
     %br
     = link_to "http://www.grumpygrams.com/#send-#{@character.friendly_id}" do
       Send your Facebook friends a
