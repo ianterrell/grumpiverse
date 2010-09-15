@@ -5,7 +5,7 @@
 - @articles.group_by(&:published_day).sort{|x,y|y[0]<=>x[0]}.each do |day, articles|
   %h3= day.to_s :pretty
   %ul.articles
-    - articles.each do |article|
+    - articles.sort{|x,y|y.published_at<=>x.published_at}.each do |article|
       %li
         - if article.main_comic
           = link_to image_tag(article.main_comic.image.url(:thumb)), article
