@@ -5,6 +5,9 @@
 #sidebar-ad { margin-left: 0px; margin-bottom: 20px; }
 #article-ad { margin-top: 20px; margin-bottom: 20px; width: 100%; text-align: center; }
 
+#index-article-link { float: right; text-decoration: none!important; font-size: 18px; color:white; }
+#index-article-link:hover { text-decoration: underline!important; }
+
 /* Main Content (style) */
 
 #main a { text-decoration: underline; }
