@@ -2,6 +2,14 @@
   %script{:type=>'text/javascript'}
     GA_googleAddSlot("ca-pub-6399676543813921", "Grumpiverse_ArticleBottom");
 
+- content_for :extra_meta do
+  %meta{:property => "og:title", :content => @article.title }/
+  %meta{:property => "og:type", :content => "article" }/
+  %meta{:property => "og:url", :content => article_url(@article) }/
+  - if @article.main_comic
+    %meta{:property => "og:image", :content => @article.main_comic.image.url(:main) }/
+  %meta{:property => "og:description", :content => Sanitize.clean(@article.render) }/
+
 .article
   %h2= @article.title
   %p.meta

@@ -1,3 +1,10 @@
+- content_for :extra_meta do
+  %meta{:property => "og:title", :content => @character.name }/
+  %meta{:property => "og:type", :content => "article" }/
+  %meta{:property => "og:url", :content => character_url(@character) }/
+  %meta{:property => "og:image", :content => @character.picture.url }/
+  %meta{:property => "og:description", :content => Sanitize.clean(@character.render_description) }/
+
 .character-left
   = image_tag @character.picture.url, :class => "character"
 

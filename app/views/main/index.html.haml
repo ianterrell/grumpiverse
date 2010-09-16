@@ -1,3 +1,10 @@
+- content_for :extra_meta do
+  %meta{:property => "og:title", :content => "The Grumpiverse" }/
+  %meta{:property => "og:type", :content => "website" }/
+  %meta{:property => "og:url", :content => root_url }/
+  %meta{:property => "og:image", :content => "http://localhost/images/header.png" }/
+  %meta{:property => "og:description", :content =>"Home to all things grumpy!  Which, given the state of the world, means just about everything.  Come on in!" }/
+
 .col-left
   #main.single
     - @articles.each do |article|

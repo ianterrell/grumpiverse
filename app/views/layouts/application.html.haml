@@ -5,10 +5,13 @@
       = "Grumpiverse :: #{@title || 'All Things Grumpy'}"
     / TODO Add a favicon to the repo
     %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:name => "description", :content => @meta_description || "Home to all things grumpy!  Which, given the state of the world, means just about everything.  Come on in!"}
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type" }/
+    %meta{:name => "description", :content => @meta_description || "Home to all things grumpy!  Which, given the state of the world, means just about everything.  Come on in!" }/
     %meta{:name => "keywords", :content => @meta_keywords || "grumpiverse, grumpy, grumpygrams, grumpygram" }
-    %meta{:name => "generator", :content => "I made this website with me own two hands.  But do they call me the website maker?  No."}/
+    %meta{:name => "generator", :content => "I made this website with me own two hands.  But do they call me the website maker?  No." }/
+    %meta{:property => "og:site_name", :content => "Grumpiverse" }/
+    %meta{:property => "fb:admins", :content => "522068344,100001281188262,100000173925807" }/
+    = yield :extra_meta
     = auto_discovery_link_tag(:atom, feedburner)
     / TODO:  Use AssetPackager or Jammit to concat into one CSS file?
     = stylesheet_link_tag "style", "grumpy"

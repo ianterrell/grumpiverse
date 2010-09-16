@@ -17,6 +17,8 @@ gem 'daemons', '1.0.10'
 gem 'haml'
 gem 'rails3-generators', :group => :development
 
+gem 'sanitize'
+
 gem 'RedCloth'
 gem 'twitter'
 
