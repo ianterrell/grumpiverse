@@ -65,7 +65,7 @@ class Tweet < ActiveRecord::Base
 
     options = {}
     options[:in_reply_to_status_id] = in_reply_to.status_id unless in_reply_to.blank? || in_reply_to.status_id.blank?
-    x = client.update tweet
+    x = client.update tweet, options
     self.tweeted_at = Time.now
     self.status_id = x[:id].to_s
     self.save(false)
