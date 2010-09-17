@@ -2,12 +2,20 @@ class Tweet < ActiveRecord::Base
   belongs_to :delayed_job, :class_name => "::Delayed::Job", :foreign_key => "delayed_job_id"
   belongs_to :character
   
+  belongs_to :in_reply_to, :class_name => "::Tweet", :foreign_key => "in_reply_to_id"
+  
   validates_presence_of :tweet, :scheduled_for_publication_at
   validates_length_of :tweet, :within => 3..140
   
   def name
     id
   end
+  
+  def summary
+    "#{character.nil? ? 'Grumpiverse' : character.name}: #{tweet.truncate(90)}"
+  end
+
+  scope :recent, order("updated_at DESC").limit(10)
 
   scope :scheduled, where("scheduled_for_publication_at IS NOT NULL AND tweeted_at IS NULL").order(:scheduled_for_publication_at)
   def scheduled?
@@ -54,7 +62,12 @@ class Tweet < ActiveRecord::Base
     end
 
     client = Twitter::Base.new(oauth)
-    client.update tweet
-    self.update_attribute :tweeted_at, Time.now
+
+    options = {}
+    options[:in_reply_to_status_id] = in_reply_to.status_id unless in_reply_to.blank? || in_reply_to.status_id.blank?
+    x = client.update tweet, options
+    self.tweeted_at = Time.now
+    self.status_id = x[:id].to_s
+    self.save(false)
   end
 end
