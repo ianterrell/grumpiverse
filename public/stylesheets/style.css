@@ -75,7 +75,7 @@ body {
 
 #nav li ul { position: absolute; width: 170px; left: -999em; }
 #nav li ul li {	
-	background: url(/images/bg-nav.png) repeat !important;
+	background: url(/images/transparentbg.png) repeat !important;
 	background: #000; 
 	-moz-border-radius: 6px;
 	-khtml-border-radius: 6px;
