@@ -11,4 +11,8 @@ jQuery(function ($) {
       $('#mce-EMAIL').val('Email Address');
     }
   });
+  $('.track-events').live('click', function(){
+    _gaq.push(['_trackEvent', $(this).attr('data-event-category'), $(this).attr('data-event-action'), $(this).attr('data-event-label')]);
+    return true;
+  });
 });

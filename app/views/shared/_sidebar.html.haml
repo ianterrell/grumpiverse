@@ -1,7 +1,7 @@
-= link_to "", "http://www.facebook.com/pages/Grumpiverse/147009798662853", :id => "fb-sidebar"
-= link_to "", "http://twitter.com/grumpiverse", :id => "tw-sidebar"
-= link_to "or follow the whole cast!", "http://twitter.com/grumpiverse/lists/cast", :id => "tw-cast-sidebar"
-= link_to "", "http://www.grumpygrams.com", :id => "gg-sidebar"
+= link_to "", "http://www.facebook.com/pages/Grumpiverse/147009798662853", :id => "fb-sidebar", :class => "track-events", :"data-event-category" => "Sidebar Promotions", :"data-event-action" => "Click", :"data-event-label" => "Facebook"
+= link_to "", "http://twitter.com/grumpiverse", :id => "tw-sidebar", :class => "track-events", :"data-event-category" => "Sidebar Promotions", :"data-event-action" => "Click", :"data-event-label" => "Twitter"
+= link_to "or follow the whole cast!", "http://twitter.com/grumpiverse/lists/cast", :id => "tw-cast-sidebar", :class => "track-events", :"data-event-category" => "Sidebar Promotions", :"data-event-action" => "Click", :"data-event-label" => "Twitter-Cast"
+= link_to "", "http://www.grumpygrams.com", :id => "gg-sidebar", :class => "track-events", :"data-event-category" => "Sidebar Promotions", :"data-event-action" => "Click", :"data-event-label" => "GrumpyGrams"
 
 #sidebar-ad
   = render :partial => "/layouts/sidebar_ad"
