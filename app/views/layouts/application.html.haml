@@ -46,7 +46,7 @@
                   - Character.all.each do |character|
                     %li{:class => "page_item #{'current_page_item' if controller_name == 'characters' && action_name == 'show' && params[:id] == character.friendly_id}"}
                       = link_to character.name, character_path(:id => character.friendly_id)
-              %li.page_item{:class => "page_item #{'current_page_item' if controller_name == 'pages' && action_name == 'show' && params[:slug] == @page.slug}"}
+              %li.page_item{:class => "page_item #{'current_page_item' if controller_name == 'articles' && action_name == 'archive'}"}
                 = link_to "Archive", archive_path
               %li.page_item{:class => "page_item #{'current_page_item' if controller_name == 'pages' && action_name == 'show' && params[:slug] == @page.slug}"}
                 = link_to "About", page_path(:slug => "about")
