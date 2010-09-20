@@ -51,7 +51,7 @@
 .social
   %h3= sharing_phrase(@character)
   = tweet_this :follow => @character.twitter_handle
-  = render :partial => "/shared/facebook_comments"
+  = fb_like
   
 .character-navigation
   = link_to "#{(@character.next || Character.all.first).name} &raquo;".html_safe, (@character.next || Character.all.first), :class => "next-character" 

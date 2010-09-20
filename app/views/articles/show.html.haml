@@ -24,7 +24,7 @@
 .social
   %h3= sharing_phrase(@article)
   = tweet_this :text => "#{truncate(@article.title, :length => 50)}"
-  = render :partial => "/shared/facebook_comments"
+  = fb_like
 
 .article-navigation
   = link_to "Up next: #{@article.next.title} &raquo;".html_safe, @article.next, :class => "next-article" if @article.next
