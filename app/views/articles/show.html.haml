@@ -8,7 +8,7 @@
   %meta{:property => "og:url", :content => article_url(@article) }/
   - if @article.main_comic
     %meta{:property => "og:image", :content => @article.main_comic.image.url(:main) }/
-  %meta{:property => "og:description", :content => Sanitize.clean(@article.render) }/
+  %meta{:property => "og:description", :content => @description || Sanitize.clean(@article.render) }/
 
 .article
   %h2= @article.title
