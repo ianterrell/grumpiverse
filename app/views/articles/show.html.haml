@@ -20,7 +20,6 @@
     %script{:type=>'text/javascript'}
       GA_googleFillSlot("Grumpiverse_ArticleBottom");
 
-%a{:name => "comments"}
 .social
   %h3= sharing_phrase(@article)
   = tweet_this :text => "#{truncate(@article.title, :length => 50)}"

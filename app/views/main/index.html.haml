@@ -25,7 +25,6 @@
               %div.digg-left
                 = link_to "", article_url(article), :class => "DiggThisButton DiggCompact"
               %script{:type => "text/javascript", :src => "http://reddit.com/static/button/button1.js", :url => article_url(article)}
-          = link_to "Comments &raquo;".html_safe, article_path(article, :anchor => "comments"), :class => "comments"
       .box3-bot
     = link_to "Archived Comics &raquo;".html_safe, archive_path, :id => "index-article-link"
 #sidebar.col-right
