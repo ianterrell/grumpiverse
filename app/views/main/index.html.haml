@@ -24,11 +24,12 @@
             %div.digg-reddit
               %div.digg-left
                 = link_to "", "http://digg.com/submit?url=#{CGI::escape(article_url(article))}&title=#{CGI::escape(article.title)}", :rev => "image, comics_animation", :class => "DiggThisButton DiggCompact"
-              %script{:type => "text/javascript", :src => "http://reddit.com/static/button/button1.js"}
+              %script{:type => "text/javascript"}
                 ="reddit_url='#{article_url(article)}';"
                 reddit_newwindow='1';
                 reddit_target='comics';
                 ="reddit_title='#{article.title} (The Grumpiverse)';"
+              %script{:type => "text/javascript", :src => "http://reddit.com/static/button/button1.js"}
       .box3-bot
     = link_to "Archived Comics &raquo;".html_safe, archive_path, :id => "index-article-link"
 #sidebar.col-right
