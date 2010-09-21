@@ -23,8 +23,10 @@
             = fb_like :href => article_url(article)
             %div.digg-reddit
               %div.digg-left
-                = link_to "", article_url(article), :class => "DiggThisButton DiggCompact"
-              %script{:type => "text/javascript", :src => "http://reddit.com/static/button/button1.js?url=#{CGI::escape(article_url(article))}".html_safe}
+                = link_to "", "http://digg.com/submit?url=#{CGI::escape(article_url(article))}", :class => "DiggThisButton DiggCompact"
+              %script{:type => "text/javascript", :src => "http://reddit.com/static/button/button1.js"}
+                ="reddit_url='#{article_url(article)}';"
+                reddit_newwindow='1';
       .box3-bot
     = link_to "Archived Comics &raquo;".html_safe, archive_path, :id => "index-article-link"
 #sidebar.col-right
