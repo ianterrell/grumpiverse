@@ -38,9 +38,8 @@
             %ul#nav
               %li{:class => "page_item #{'current_page_item' if controller_name == 'main' && action_name == 'index'}"}
                 = link_to "Home", root_path
-              /
-                %li.page_item
-                  %a{:href => "#", :title => "Shop"} Shop
+              %li.page_item
+                %a{:href => "http://www.cafepress.com/grumpiverse", :title => "Shop"} Shop
               %li{:class => "page_item #{'current_page_item' if controller_name == 'characters' && action_name == 'index'}"}
                 = link_to "Cast", cast_path
                 %ul.children
