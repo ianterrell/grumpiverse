@@ -4,7 +4,7 @@ atom_feed do |feed|
   feed.updated @articles.first.try :published_at
 
   @articles.each do |article|
-    feed.entry(article) do |entry|
+    feed.entry(article, :published => article.published_at) do |entry|
       entry.title article.title
       
       entry.author do |author|
