@@ -3,6 +3,8 @@
 
 #top-ad { background-color: #000; text-align: center; padding-bottom: 0px; width: 100%; text-align: center; }
 #sidebar-ad { margin-left: 0px; margin-bottom: 20px; }
+#sidebar-skyscraper { width: 160px; margin-left: auto; margin-right: auto; margin-bottom: 20px; }
+#bottom-leaderboard { margin-left: 95px; margin-bottom: 10px; }
 #article-ad { margin-top: 20px; margin-bottom: 20px; width: 100%; text-align: center; }
 
 #index-article-link { float: right; text-decoration: none!important; font-size: 18px; color:white; }
