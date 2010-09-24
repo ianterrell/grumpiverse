@@ -28,7 +28,7 @@
                 ="reddit_url='#{article_url(article)}';"
                 reddit_newwindow='1';
                 reddit_target='comics';
-                ="reddit_title='#{article.title} (The Grumpiverse)';"
+                ="reddit_title='#{article.title}';"
               %script{:type => "text/javascript", :src => "http://reddit.com/static/button/button1.js"}
       .box3-bot
     = link_to "Archived Comics &raquo;".html_safe, archive_path, :id => "index-article-link"

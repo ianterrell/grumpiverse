@@ -27,6 +27,10 @@
   %div.digg-reddit
     %div.digg-left
       = link_to "", "", :class => "DiggThisButton DiggCompact"
+    %script{:type => "text/javascript"}
+      reddit_newwindow='1';
+      reddit_target='comics';
+      ="reddit_title='#{@article.title}';"
     %script{:type => "text/javascript", :src => "http://reddit.com/static/button/button1.js" }
     
 .article-navigation
