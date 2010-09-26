@@ -12,7 +12,7 @@
       .post.wrap
         .article
           %h2
-            = link_to article.title, article
+            = link_to article.title, article, :title => "#{article.title} - Another grumpy webcomic about politics and the news!"
           %p.meta
             %span.date= article.published_at.to_s :full_pretty
           .text
