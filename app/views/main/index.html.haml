@@ -3,7 +3,7 @@
   %meta{:property => "og:type", :content => "website" }/
   %meta{:property => "og:url", :content => root_url }/
   %meta{:property => "og:image", :content => "http://localhost/images/header.png" }/
-  %meta{:property => "og:description", :content =>"Home to all things grumpy!  Which, given the state of the world, means just about everything.  Come on in!" }/
+  %meta{:property => "og:description", :content =>"A webcomic about everything that make us grumpy, like politics and the news.  Come on in!" }/
 
 .col-left
   #main.single
@@ -31,6 +31,10 @@
                 ="reddit_title='#{article.title}';"
               %script{:type => "text/javascript", :src => "http://reddit.com/static/button/button1.js"}
       .box3-bot
-    = link_to "Archived Comics &raquo;".html_safe, archive_path, :id => "index-article-link"
+    .box3-top
+    .post.wrap
+      %p Thanks for visiting the Grumpiverse, a webcomic about everything that makes us grumpy, like politics and the news!  There's plenty left!  Continue on to visit our archives!
+      = link_to "Archived Comics &raquo;".html_safe, archive_path, :id => "index-article-link"
+    .box3-bot
 #sidebar.col-right
   = render :partial => "/shared/sidebar"
