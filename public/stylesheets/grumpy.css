@@ -118,3 +118,5 @@ a.read-more { color: white; font-size: 14px; text-decoration: underline;}
 
 .digg-reddit { display: block; margin-top: 15px; }
 .digg-left { float: left; margin-right: 15px; }
+
+.promotional-rainbow img { border: none; display: inline; vertical-align: middle; }

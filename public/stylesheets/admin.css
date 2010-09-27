@@ -72,3 +72,5 @@ a.nuke:hover { background: red!important; color: white!important; }
 
 .article-sidebar-comics { margin-top: 10px; }
 .article-sidebar-snippets { margin-top: 10px; }
+
+.promotional-rainbow img { border: none; display: inline; vertical-align: middle; }
