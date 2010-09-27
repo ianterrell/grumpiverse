@@ -26,6 +26,9 @@
             %ul#nav
               %li{:class => "page_item #{'current_page_item' if controller_name == "articles"}"}
                 = link_to "Articles", admin_articles_path
+                %ul.children
+                  %li{:class => "page_item #{'current_page_item' if controller_name == 'snippets'}"}
+                    = link_to "Snippets", admin_snippets_path
               %li{:class => "page_item #{'current_page_item' if controller_name == "comics"}"}
                 = link_to "Comics", admin_comics_path
               %li{:class => "page_item #{'current_page_item' if controller_name == "pages"}"}

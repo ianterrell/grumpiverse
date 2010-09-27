@@ -13,6 +13,7 @@ Grumpiverse::Application.routes.draw do
         post :reorder
       end
     end
+    resources :snippets
     resources :articles do
       collection do
         get :published

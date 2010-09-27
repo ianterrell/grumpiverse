@@ -1,0 +1,20 @@
+- if @snippets.empty?
+  %p
+    There are no snippets here!
+- else
+  %table
+    %tr
+      %th Name
+      %th Modified
+      %th Actions
+    - @snippets.each do |snippet|
+      %tr
+        %td= link_to snippet.name, admin_snippet_path(snippet)
+        %td
+          = distance_of_time_in_words_to_now snippet.updated_at
+          ago
+        %td.actions
+          = link_to "Edit", edit_admin_snippet_path(snippet), :class => "edit"
+
+- content_for :sidebar do
+  = link_to "Add Snippet", new_admin_snippet_path, :class => "add"

@@ -12,6 +12,12 @@ jQuery(function ($) {
     return false;
   });
   
+  $(".article-sidebar-snippets a").live('click', function() {
+    body = $(this).attr("data-body");
+    $.markItUp({ replaceWith:body });
+    return false;
+  });
+  
   $(document).ready(function(){
     $('.datepicker').datepicker();
     $("textarea").each(function(){
