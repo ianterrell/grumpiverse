@@ -3,7 +3,7 @@
     There are no comics!
 - else
   - @comics.each do |comic|
-    = link_to image_tag(comic.image.url(:thumb)), admin_comic_path(comic)
+    = link_to image_tag(comic.image.url(:favorite)), admin_comic_path(comic)
 
   = will_paginate @comics
 
