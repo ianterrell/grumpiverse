@@ -3,6 +3,11 @@
   = f.text_field :name
   = f.error_message_on :name
 
+  %div
+    = f.label :position
+    = f.text_field :position
+    = f.error_message_on :position
+
 %div
   = f.text_area :body
   = f.error_message_on :body
