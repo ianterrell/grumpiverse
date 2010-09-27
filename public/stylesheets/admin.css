@@ -69,3 +69,6 @@ img.avatar-thumb { float: left; margin-right: 10px; }
 #nav { width: 910px;}
 li.nuke { float: right!important; }
 a.nuke:hover { background: red!important; color: white!important; }
+
+.article-sidebar-comics { margin-top: 10px; }
+.article-sidebar-snippets { margin-top: 10px; }

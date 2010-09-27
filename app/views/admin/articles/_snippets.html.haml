@@ -1,4 +1,5 @@
 .article-sidebar-snippets
   %h3 Snippets
-  - Snippet.order("updated_at DESC").each do |snippet|
-    = link_to snippet.name, "#", :"data-body" => snippet.body
+  %ul
+    - Snippet.order("updated_at DESC").each do |snippet|
+      %li= link_to snippet.name, "#", :"data-body" => snippet.body
