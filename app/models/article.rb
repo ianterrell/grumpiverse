@@ -12,6 +12,8 @@ class Article < ActiveRecord::Base
   
   validates_presence_of :title, :body
   
+  validates_inclusion_of :subreddit, :in => %w( politics comics funny ), :on => :create, :message => "extension %s is not included in the list"
+  
   scope :favorite, where(:favorite => true)
   
   scope :drafts, where("scheduled_for_publication_at IS NULL").order("updated_at DESC")

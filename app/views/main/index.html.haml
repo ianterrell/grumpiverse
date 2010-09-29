@@ -27,7 +27,7 @@
               %script{:type => "text/javascript"}
                 ="reddit_url='#{article_url(article)}';"
                 reddit_newwindow='1';
-                reddit_target='comics';
+                ="reddit_target='#{article.subreddit}';"
                 ="reddit_title='#{article.title}';"
               %script{:type => "text/javascript", :src => "http://reddit.com/static/button/button1.js"}
       .box3-bot

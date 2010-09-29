@@ -22,4 +22,9 @@
   = f.check_box :favorite
   = f.error_message_on :favorite
   
+%div
+  = f.label :subreddit
+  = f.text_field :subreddit
+  = f.error_message_on :subreddit
+  
 = render :partial => "/shared/seo_fields", :locals => { :f => f }
