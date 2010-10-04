@@ -12,7 +12,7 @@ class Article < ActiveRecord::Base
   
   validates_presence_of :title, :body
   
-  validates_inclusion_of :subreddit, :in => %w( politics comics funny ), :on => :create, :message => "extension %s is not included in the list"
+  validates_inclusion_of :subreddit, :in => %w( politics comics funny PoliticalHumor ), :on => :create, :message => "only politics, comics, funny, and PoliticalHumor are allowed"
   
   scope :favorite, where(:favorite => true)
   
