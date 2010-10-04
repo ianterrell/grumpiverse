@@ -104,6 +104,7 @@ a.read-more { color: white; font-size: 14px; text-decoration: underline;}
 #mc-embedded-subscribe-form input[type=text] { font-size: 18px; width: 170px; margin-right: 10px; padding: 4px;}
 #mc-embedded-subscribe-form .initial { color: #999; }
 
+#breast-cancer-sidebar { display: block; width: 220px; height: 140px; background:#3b5998 url(/images/maximus-breast-cancer-awareness-sidebar.png) no-repeat top left; border: 5px solid white; -moz-border-radius: 6px; -webkit-border-radius: 6px; cursor: hand; margin-bottom: 20px; }
 #fb-sidebar { display: block; width: 220px; height: 70px; background:#3b5998 url(/images/fb-sidebar.png) no-repeat top left; border: 5px solid white; -moz-border-radius: 6px; -webkit-border-radius: 6px; cursor: hand; margin-bottom: 20px; }
 #tw-sidebar { display: block; width: 220px; height: 70px; background:#5d9fc0 url(/images/tw-sidebar.png) no-repeat top left; border: 5px solid white; -moz-border-radius: 6px; -webkit-border-radius: 6px; cursor: hand; margin-bottom: 0px; }
 #tw-cast-sidebar { display: block; width: 220px; text-align: center; color: #44a7ec; text-decoration: none; font-weight: bold; margin-bottom: 20px; }
