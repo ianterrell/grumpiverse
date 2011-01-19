@@ -1,0 +1,26 @@
+%li
+  .actions
+    = link_to "Edit", edit_admin_comic_path(comic), :class => "edit"
+    - if comic.draft?
+      = link_to "Delete", admin_comic_path(comic), :method => :delete, :confirm => "Are you sure you wish to delete this comic? This cannot be undone.", :class => "delete"
+  
+  .title= link_to comic.title, admin_comic_path(comic)
+  .status
+    - if action_name != "index"
+      - if comic.draft?
+        Draft
+      - elsif comic.scheduled?
+        Scheduled to be published on
+        = comic.scheduled_for_publication_at.to_s :pretty
+        at 
+        = comic.scheduled_for_publication_at.to_s :time_only
+      - else
+        Published on
+        = comic.published_at.to_s :pretty
+        at 
+        = comic.published_at.to_s :time_only
+    - else
+      - if comic.scheduled?
+        Scheduled to be published at
+        = comic.scheduled_for_publication_at.to_s :time_only
+  .clear

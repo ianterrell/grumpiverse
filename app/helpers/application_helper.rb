@@ -40,8 +40,8 @@ module ApplicationHelper
   def archive_links
     links = []
     t = Time.now
-    while t >= Article::FirstMonth
-      count = Article.published_in_month(t).count
+    while t >= Comic::FirstMonth
+      count = Comic.published_in_month(t).count
       links << { :year => t.year, :month => t.month, :name => t.strftime("%B %Y"), :count => count } unless count == 0
       t = t - 1.month
     end

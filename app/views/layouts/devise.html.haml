@@ -1,0 +1,14 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head{:profile => "http://gmpg.org/xfn/11"}
+    %title
+      = "Grumpiverse - #{@title || 'A webcomic about everything grumpy, like politics and the news.'}"
+    / TODO Add a favicon to the repo
+    %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type" }/
+    %meta{:name => "keywords", :content => @meta_keywords.blank? ? "grumpiverse, grumpy, grumpygrams, grumpygram" : @meta_keywords }
+    %meta{:name => "generator", :content => "I made this website with me own two hands.  But do they call me the website maker?  No." }/
+    = stylesheet_link_tag "scaffold"
+    = csrf_meta_tag
+  %body.login
+    = yield

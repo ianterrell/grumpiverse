@@ -1,0 +1,24 @@
+- if @drafts.empty? && @scheduled_comics.empty?
+  %p 
+    No comics drafted or upcoming!  
+    = link_to "Better get to work.", new_admin_comic_path
+
+- unless @drafts.empty?
+  %h3 Drafts
+  %ul.comics
+    = render @drafts
+  .clear
+  
+- @scheduled_comics.group_by(&:scheduled_publication_day).sort{|x,y|x[0]<=>y[0]}.each do |day, comics|
+  %h3= day.to_s :pretty
+  %ul.comics
+    = render comics.sort{|x,y|x.scheduled_for_publication_at <=> y.scheduled_for_publication_at}
+  .clear
+
+
+- content_for :sidebar do
+  = link_to "Draft a new comic", new_admin_comic_path, :class => "add"
+  %p
+    = link_to "Published comics", published_admin_comics_path
+    |
+    = link_to "All comics", all_admin_comics_path

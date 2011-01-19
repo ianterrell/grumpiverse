@@ -1,12 +1,6 @@
-class Article < ActiveRecord::Base
-  FirstMonth = Time.parse "2010/08"
-  
+class Comic < ActiveRecord::Base
   belongs_to :delayed_job, :class_name => "::Delayed::Job", :foreign_key => "delayed_job_id"
   has_and_belongs_to_many :characters
-  belongs_to :main_comic, :class_name => "Comic", :foreign_key => "main_comic_id"
-  
-  belongs_to :seo
-  accepts_nested_attributes_for :seo
   
   has_friendly_id :title, :use_slug => true, :approximate_ascii => true, :strip_non_ascii => true
   
@@ -33,11 +27,11 @@ class Article < ActiveRecord::Base
   end
   
   def previous
-    Article.where("published_at IS NOT NULL").where("published_at < ?", self.published_at).order("published_at DESC").limit(1).first
+    Comic.where("published_at IS NOT NULL").where("published_at < ?", self.published_at).order("published_at DESC").limit(1).first
   end
   
   def next
-    Article.where("published_at IS NOT NULL").where("published_at > ?", self.published_at).order("published_at ASC").limit(1).first
+    Comic.where("published_at IS NOT NULL").where("published_at > ?", self.published_at).order("published_at ASC").limit(1).first
   end
   
   def name
@@ -55,7 +49,7 @@ class Article < ActiveRecord::Base
   def schedule_for_publication_at(publish_at)
     self.scheduled_for_publication_at = Time.zone.parse(publish_at)
     if scheduled?
-      job = Delayed::Job.enqueue ArticlePublicationJob.new(id), 0, scheduled_for_publication_at
+      job = Delayed::Job.enqueue ComicPublicationJob.new(id), 0, scheduled_for_publication_at
       self.delayed_job_id = job.id
       self.save(false)
     else

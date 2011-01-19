@@ -2,79 +2,44 @@
 %html{:xmlns => "http://www.w3.org/1999/xhtml"}
   %head{:profile => "http://gmpg.org/xfn/11"}
     %title
-      Grumpiverse :: All Things Grumpy
+      Grumpiverse
     / TODO Add a favicon to the repo
     %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:name => "description", :content => "Post little pictures of some very grumpy individuals on a sad friend's wall to cheer them up!"}
     %meta{:name => "keywords", :content => "grumpygrams, grumpygram, grumpiverse, grumpy, ecard, egram, gram"}
     / TODO:  Use AssetPackager or Jammit to concat into one CSS file?
-    = stylesheet_link_tag "style", "admin", "jquery-ui-1.8.4.custom", "markitup.simple", "markitup.textile"
-    / TODO:  Implement RSS and integrate with Feedburner
-    /[if IE 6]
-      = javascript_include_tag "pngfix"
-      = stylesheet_link_tag "ie6"
+    = stylesheet_link_tag "scaffold", "admin"
     %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", :type => "text/javascript"}
-    %script{:src => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.3/jquery-ui.min.js", :type => "text/javascript"}
-    = javascript_include_tag "rails", "jquery.markitup", "textile", "admin"
+    = javascript_include_tag "rails", "admin", "application"
     = csrf_meta_tag
-  %body
-    #wrap
-      #top
-        #top-nav.wrap
-          .fl
-            %ul#nav
-              %li{:class => "page_item #{'current_page_item' if controller_name == "articles"}"}
-                = link_to "Articles", admin_articles_path
-                %ul.children
-                  %li{:class => "page_item #{'current_page_item' if controller_name == 'snippets'}"}
-                    = link_to "Snippets", admin_snippets_path
-              %li{:class => "page_item #{'current_page_item' if controller_name == "comics"}"}
-                = link_to "Comics", admin_comics_path
-              %li{:class => "page_item #{'current_page_item' if controller_name == "pages"}"}
-                = link_to "Pages", admin_pages_path
-              %li{:class => "page_item #{'current_page_item' if controller_name == "characters"}"}
-                = link_to "Characters", admin_characters_path
-              %li{:class => "page_item #{'current_page_item' if controller_name == "tweets"}"}
-                = link_to "Tweets", admin_tweets_path
-              / %li{:class => "page_item #{'current_page_item' if controller_name == "grams"}"}
-              /   = link_to "Grams", admin_grams_path
-              %li{:class => "nuke"}
-                = link_to "Nuke Cache", admin_nuke_path, :confirm => "Are you sure?", :method => :post, :class => "nuke"
-              .clear
-        #header
-          = display_flash :notice, :alert
-          %h1
-            %span.the 
-              _
-              - if action_name == "index"
-                = controller_name.titleize
-              - else
-                = link_to self.send(:"admin_#{controller_name}_path") do
-                  = controller_name.titleize
-                &raquo;
-                - if action_name == "show"
-                  = instance_variable_get("@#{controller_name.singularize}").name
-                - elsif action_name == "edit"
-                  = link_to self.send(:"admin_#{controller_name.singularize}_path", instance_variable_get("@#{controller_name.singularize}")) do
-                    = instance_variable_get("@#{controller_name.singularize}").name
-                  &raquo; Edit
-                - else
-                  = action_name.titleize
-        .clear
-      #content.home.wrap.admin
-        .col-left
-          #main.single
-            .box3-top
-            .post.wrap
-              = yield
-        #sidebar.col-right
-          = yield(:sidebar)
-      #bottom-tile
-      #bottom-out
-        #bottom.wrap
-          #features-top
-      #footer-out
-        #footer.wrap
-          .col-left
-            %p CONFIDENTIAL BITCHES
+  %body  
+    = display_flash :notice, :alert
+    %ul#navigation
+      %li= link_to "Comics", admin_comics_path
+      %li= link_to "Characters", admin_characters_path
+      %li= link_to "Sign Out", destroy_user_session_path
+
+    %h1#header
+      %span
+        - if action_name == "index"
+          = controller_name.titleize
+        - else
+          = link_to self.send(:"admin_#{controller_name}_path") do
+            = controller_name.titleize
+          &raquo;
+          - if action_name == "show"
+            = instance_variable_get("@#{controller_name.singularize}").name
+          - elsif action_name == "edit"
+            = link_to self.send(:"admin_#{controller_name.singularize}_path", instance_variable_get("@#{controller_name.singularize}")) do
+              = instance_variable_get("@#{controller_name.singularize}").name
+            &raquo; Edit
+          - else
+            = action_name.titleize
+
+    #sidebar
+      = yield(:sidebar)
+    #content
+      = yield
+    #footer
+      %p CONFIDENTIAL BITCHES
