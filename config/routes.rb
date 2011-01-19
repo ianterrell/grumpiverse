@@ -2,7 +2,8 @@ Grumpiverse::Application.routes.draw do
   resources :comics, :only => :show
   match "feed.:format", :to => "comics#feed", :as => "feed"
   root :to => "comics#show"
-  
+  match '*url', :to => 'comics#show'
+
   devise_for :users  
   namespace :admin do
     resources :characters
