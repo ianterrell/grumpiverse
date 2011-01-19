@@ -36,7 +36,7 @@ module Grumpiverse
     config.generators do |g|
       g.orm             :active_record
       g.template_engine :haml
-      g.test_framework  :rspec, :fixture => false
+      g.test_framework  nil # no net, bitches!
     end
 
     # Configure the default encoding used in templates for Ruby 1.9.

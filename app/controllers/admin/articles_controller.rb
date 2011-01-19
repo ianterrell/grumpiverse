@@ -1,4 +1,6 @@
-class Admin::ArticlesController < Admin::CrudController
+class Admin::ArticlesController < Admin::BaseController
+  inherit_resources
+  
   def index
     @drafts = Article.drafts
     @scheduled_articles = Article.scheduled

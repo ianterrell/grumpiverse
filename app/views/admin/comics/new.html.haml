@@ -1,7 +1,0 @@
-= form_for [:admin, @comic], :html => { :multipart => true } do |f|
-  = render :partial => "/admin/comics/form", :locals => { :f => f }
-  = f.submit
-  = link_to "Cancel", admin_comics_path
-
-- content_for :sidebar do
-  = link_to "Back", admin_comics_path, :class => "back"

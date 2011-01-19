@@ -1,9 +1,0 @@
-- if @tweets.empty?
-  %p 
-    No tweets published!
-- else
-  - @tweets.group_by(&:scheduled_publication_day).sort{|x,y|y[0]<=>x[0]}.each do |day, tweets|
-    %h3= day.to_s :pretty
-    %ul.tweets
-      - tweets.each do |article|
-        = render tweets

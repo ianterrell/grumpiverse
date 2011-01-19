@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100929161808) do
+ActiveRecord::Schema.define(:version => 20110119034338) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -61,16 +61,6 @@ ActiveRecord::Schema.define(:version => 20100929161808) do
     t.datetime "gram_updated_at"
   end
 
-  create_table "comics", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.string   "alt_text"
-  end
-
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
     t.integer  "attempts",   :default => 0
@@ -80,28 +70,6 @@ ActiveRecord::Schema.define(:version => 20100929161808) do
     t.datetime "locked_at"
     t.datetime "failed_at"
     t.string   "locked_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "grams", :force => true do |t|
-    t.integer  "character_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "pages", :force => true do |t|
-    t.string   "slug"
-    t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "seo_id"
-  end
-
-  create_table "seos", :force => true do |t|
-    t.string   "title"
-    t.string   "keywords"
-    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -117,26 +85,6 @@ ActiveRecord::Schema.define(:version => 20100929161808) do
 
   add_index "slugs", ["name", "sluggable_type", "sequence", "scope"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
   add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
-
-  create_table "snippets", :force => true do |t|
-    t.string   "name"
-    t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "position",   :default => 1
-  end
-
-  create_table "tweets", :force => true do |t|
-    t.integer  "character_id"
-    t.string   "tweet"
-    t.datetime "scheduled_for_publication_at"
-    t.datetime "tweeted_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "delayed_job_id"
-    t.string   "status_id"
-    t.integer  "in_reply_to_id"
-  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                              :default => "", :null => false
