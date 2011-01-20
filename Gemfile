@@ -4,8 +4,6 @@ gem 'rails', '3.0.3'
 
 gem 'mysql', '2.8.1'
 gem 'devise', '1.2.rc'
-gem 'hpricot'
-gem 'ruby_parser'
 
 gem 'paperclip', :git => 'http://github.com/thoughtbot/paperclip.git'
 gem 'aws-s3'

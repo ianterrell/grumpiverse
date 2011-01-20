@@ -23,4 +23,5 @@
       - if comic.scheduled?
         Scheduled to be published at
         = comic.scheduled_for_publication_at.to_s :time_only
+    .preview= link_to "Preview", preview_admin_comic_path(comic, :format => 'svg')
   .clear

@@ -4,12 +4,8 @@ class Comic < ActiveRecord::Base
   
   has_friendly_id :title, :use_slug => true, :approximate_ascii => true, :strip_non_ascii => true
   
-  validates_presence_of :title, :body
-  
-  validates_inclusion_of :subreddit, :in => %w( politics comics funny PoliticalHumor ), :on => :create, :message => "only politics, comics, funny, and PoliticalHumor are allowed"
-  
-  scope :favorite, where(:favorite => true)
-  
+  validates_presence_of :title
+
   scope :drafts, where("scheduled_for_publication_at IS NULL").order("updated_at DESC")
   def draft?
     !scheduled? && !published?
@@ -68,19 +64,5 @@ class Comic < ActiveRecord::Base
   
   def publish!
     self.update_attribute :published_at, Time.now
-    Cache.nuke!
-  end
-  
-  def author_code
-    author.blank? ? nil : "#{author.class.name}:#{author.id}"
-  end
-  
-  def author_code=(code)
-    class_name, instance_id = code.split ':'
-    self.author = class_name.constantize.find instance_id
-  end
-  
-  def render
-    RedCloth.new(body.to_s).to_html.html_safe
-  end
+  end  
 end

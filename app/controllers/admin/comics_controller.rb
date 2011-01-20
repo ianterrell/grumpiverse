@@ -2,7 +2,6 @@ class Admin::ComicsController < Admin::BaseController
   inherit_resources
   
   def index
-    flash.now[:notice] = "Hi"
     @drafts = Comic.drafts
     @scheduled_comics = Comic.scheduled
   end
@@ -34,5 +33,9 @@ class Admin::ComicsController < Admin::BaseController
       flash[:alert] = "There was an error.  Dammit.  Make sure this object validates."
     end
     redirect_to [:admin, @comic]
+  end
+  
+  def preview
+    render :text => ComicRenderer.new.render
   end
 end

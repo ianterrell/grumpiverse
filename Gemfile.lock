@@ -58,7 +58,6 @@ GEM
       babosa (~> 0.2.1)
     haml (3.0.25)
     has_scope (0.5.0)
-    hpricot (0.8.3)
     i18n (0.5.0)
     inherited_resources (1.1.2)
       has_scope (~> 0.5.0)
@@ -94,9 +93,6 @@ GEM
       thor (~> 0.14.4)
     rake (0.8.7)
     responders (0.6.2)
-    ruby_parser (2.0.5)
-      sexp_processor (~> 3.0)
-    sexp_processor (3.0.5)
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
@@ -115,11 +111,9 @@ DEPENDENCIES
   devise (= 1.2.rc)
   friendly_id (~> 3.0)
   haml
-  hpricot
   inherited_resources (= 1.1.2)
   mysql (= 2.8.1)
   paperclip!
   rails (= 3.0.3)
   rails3-generators
-  ruby_parser
   will_paginate (= 3.0.pre2)

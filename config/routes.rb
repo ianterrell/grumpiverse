@@ -2,7 +2,6 @@ Grumpiverse::Application.routes.draw do
   resources :comics, :only => :show
   match "feed.:format", :to => "comics#feed", :as => "feed"
   root :to => "comics#show"
-  match '*url', :to => 'comics#show'
 
   devise_for :users  
   namespace :admin do
@@ -13,6 +12,7 @@ Grumpiverse::Application.routes.draw do
         get :all
       end
       member do
+        get :preview
         post :schedule_for_publication
         post :undo_schedule_for_publication
       end

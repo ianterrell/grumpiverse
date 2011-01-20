@@ -4,6 +4,6 @@ class Admin::BaseController < ApplicationController
   
   def root
     flash.keep
-    redirect_to admin_articles_path
+    redirect_to admin_comics_path
   end
 end

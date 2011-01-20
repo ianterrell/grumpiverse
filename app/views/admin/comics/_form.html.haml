@@ -7,24 +7,3 @@
   = f.label :character_ids, "Featuring"
   = f.select :character_ids, options_from_collection_for_select(Character.all, :id, :name, f.object.character_ids), {}, :multiple => true
   = f.error_message_on :character_ids
-
-%div
-  = f.label :main_comic_id
-  = f.select :main_comic_id, options_for_select(comics_to_choose_from_for_article(f.object).map{|c|[c.alt_text.truncate(93), c.id]}, f.object.main_comic_id)
-  = f.error_message_on :main_comic_id
-
-%div
-  = f.text_area :body
-  = f.error_message_on :body
-  
-%div
-  = f.label :favorite
-  = f.check_box :favorite
-  = f.error_message_on :favorite
-  
-%div
-  = f.label :subreddit
-  = f.text_field :subreddit
-  = f.error_message_on :subreddit
-  
-= render :partial => "/shared/seo_fields", :locals => { :f => f }

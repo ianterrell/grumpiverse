@@ -1,36 +1,30 @@
-%h2= @article.title
+%h2= @comic.title
 %h3
   Featuring
-  = @article.characters.map{|x|x.name}.join(", ")
-%h4
-  - if @article.favorite?
-    Currently a favorite!
-  
-.article
-  = @article.render
+  = @comic.characters.map{|x|x.name}.join(", ")
 
 - content_for :sidebar do
-  = link_to "Back", admin_articles_path, :class => "back"
-  - if @article.draft?
-    = link_to "Edit", edit_admin_article_path(@article), :class => "edit"
-    = link_to "Delete", admin_article_path(@article), :method => :delete, :confirm => "Are you sure?", :class => "delete"
+  = link_to "Back", admin_comics_path, :class => "back"
+  - if @comic.draft?
+    = link_to "Edit", edit_admin_comic_path(@comic), :class => "edit"
+    = link_to "Delete", admin_comic_path(@comic), :method => :delete, :confirm => "Are you sure?", :class => "delete"
   
   .status
-    - if @article.draft?
-      = "This article is a #{content_tag(:strong, 'draft')}.".html_safe
+    - if @comic.draft?
+      = "This comic is a #{content_tag(:strong, 'draft')}.".html_safe
       
-      - form_tag schedule_for_publication_admin_article_path(@article), :id => "schedule-form" do |form|
+      - form_tag schedule_for_publication_admin_comic_path(@comic), :id => "schedule-form" do |form|
         = label_tag :publish_date, "Schedule for publication"
         = text_field_tag :publish_date, '', :class => "datepicker"
         = text_field_tag :publish_time, ''
         = submit_tag "Schedule"
       
-    - elsif @article.scheduled?
-      = "This article is scheduled to be published on #{content_tag :strong, @article.scheduled_for_publication_at.to_s(:full_pretty)} at #{content_tag :strong, @article.scheduled_for_publication_at.to_s(:time_only)}.".html_safe
+    - elsif @comic.scheduled?
+      = "This comic is scheduled to be published on #{content_tag :strong, @comic.scheduled_for_publication_at.to_s(:full_pretty)} at #{content_tag :strong, @comic.scheduled_for_publication_at.to_s(:time_only)}.".html_safe
       
-      - form_tag undo_schedule_for_publication_admin_article_path(@article), :id => "schedule-form" do |form|
+      - form_tag undo_schedule_for_publication_admin_comic_path(@comic), :id => "schedule-form" do |form|
         = submit_tag "Undo scheduling"
             
-    - elsif @article.published?
-      = "This article was published on #{content_tag :strong, @article.published_at.to_s(:full_pretty)} at #{content_tag :strong, @article.published_at.to_s(:time_only)}.".html_safe
+    - elsif @comic.published?
+      = "This comic was published on #{content_tag :strong, @comic.published_at.to_s(:full_pretty)} at #{content_tag :strong, @comic.published_at.to_s(:time_only)}.".html_safe
       

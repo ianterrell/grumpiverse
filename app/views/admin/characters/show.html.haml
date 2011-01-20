@@ -1,29 +1,6 @@
-= image_tag @character.picture.url, :class => "character"
-
 %h1= @character.name
 
-%h3 Short Description
-= @character.render_short_description
-
-%h3 Description
-= @character.render_description
-
-.clear
-
-%h3 Avatar
-= image_tag @character.avatar.url(:thumb)
-
-%h3 Gram
-= image_tag @character.gram.url(:thumb)
-
-%h3 Twitter
-%p 
-  Tweets from
-  = link_to @character.twitter_handle, "http://twitter.com/#{@character.twitter_handle}"
-
-- if !@character.twitter_ready?
-  %p This character's Twitter account needs authorized from the console:
-  = render :partial => "/admin/characters/twitter_auth"
+%pre=@character.svg
 
 - content_for :sidebar do
   = link_to "Back", admin_characters_path, :class => "back"
