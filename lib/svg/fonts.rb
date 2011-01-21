@@ -1,8 +1,6 @@
 module Svg
   module Fonts
     AppleCasual = <<-XML
-      <defs>
-      <font id="AppleCasual" horiz-adv-x="500" >
         <font-face 
           font-family="Apple Casual"
           font-weight="400"
@@ -671,8 +669,7 @@ module Svg
           <glyph glyph-name="Euro" unicode="&#x20ac;" horiz-adv-x="718" 
       d="M640 514q0 -24 -18 -40t-42 -16q-33 0 -49 32q-11 22 -21 32q-102 -16 -153 -110h92q23 0 41 -12.5t18 -34.5q0 -44 -56 -44h-126q-4 -21 -5 -44h97q23 0 41 -12t18 -34q0 -44 -56 -44h-93q22 -97 79 -92q65 5 116 89q17 28 47 28q24 0 42 -16.5t18 -40.5q0 -16 -9 -31
       q-89 -145 -209 -145q-80 0 -136 66q-48 57 -64 142h-56q-23 0 -41 12t-18 34q0 44 56 44h52q0 23 2 44h-20q-24 0 -40 11q-19 13 -19 36q0 44 56 44h43q39 111 141 176q82 52 142 52q74 0 123 -98q7 -14 7 -28z" />
-        </font>
-      </defs>
+
     XML
   end
 end

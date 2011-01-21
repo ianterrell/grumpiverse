@@ -67,8 +67,8 @@ module Svg
       def lines_of_text(text, options={})
         x = options.delete :x
         y = options.delete :y
-        unless text.is_a? ::Svg::Helper::String
-          text = ::Svg::Helper::String.new text, :font_size => (options[:"font-size"] || options["font-size"] || options[:font_size] || "10px").gsub("px","").to_i
+        unless text.is_a? ::Svg::String
+          text = ::Svg::String.new text, :font_size => (options[:"font-size"] || options["font-size"] || options[:font_size] || "10px").gsub("px","").to_i
         end
         text.lines.each_with_index do |line, index|
           @xml.text line, options.merge(:x => x, :y => text.vertical_center_for_line(index, :offset => y))
@@ -78,6 +78,63 @@ module Svg
       # def font(name, options = {})
       #   @xml.font(:id => "HelveticaRoundedLTStd-Bd", :"horiz-adv-x" => "611"){ |font| font << render(:partial => "/fonts/helvetica_rounded_bold") }
       # end
+      
+      def speech_bubble(options={})
+        cx, cy, rx, ry, px, py = options[:cx], options[:cy], options[:rx], options[:ry], options[:px], options[:py]
+
+        # We have an ellipse
+        @xml.ellipse :cx => cx, :cy => cy, :rx => rx, :ry => ry, :fill => "#FFFFFF", :stroke => "#000000", :"stroke-width" => 3
+        
+        # Take two lines given described by three points, the tip of the speech bubble point as P, 
+        # making two lines against each of two points A and B on the interior that we guess
+        
+        ax = cx - rx/3
+        ay = cy
+        bx = cx + rx/3
+        by = cy
+        
+        # And some brute force calculations to get a pixel or two inside each line
+        m = slope_for(px,py,ax,ay)
+        i = intersection_for(ax,ay,m)
+        a = intersection_of_ellipse_and_line(px,ax,cx,cy,rx,ry,m,i)
+        
+        m = slope_for(px,py,bx,by)
+        i = intersection_for(bx,by,m)
+        b = intersection_of_ellipse_and_line(px,bx,cx,cy,rx,ry,m,i)
+
+        @xml.polyline :fill => "#FFFFFF", :points => "#{a[0]},#{a[1]} #{px},#{py} #{b[0]},#{b[1]}", :stroke => "#000000", :"stroke-width" => 3
+      end
+      
+      def slope_for(x1,y1,x2,y2)
+        (y2-y1)/(x2-x1)
+      end
+      
+      def intersection_for(x,y,m)
+        y - m * x
+      end
+      
+      def intersection_of_ellipse_and_line(x_initial,x_final,cx,cy,rx,ry,m,b)
+        x = x_initial
+        y = line_equation(x,m,b)
+        result = ellipse_equation(x,y,cx,cy,rx,ry)
+        while (x < x_final && result > 1.0)
+          y = line_equation(x,m,b)
+          result = ellipse_equation(x,y,cx,cy,rx,ry)
+          x += 1
+        end
+        
+        x += 0.2 # fudge it! best fudge value might depend on size
+        y = line_equation(x,m,b)
+        [x,y]
+      end
+      
+      def line_equation(x,m,b)
+        m*x + b
+      end
+      
+      def ellipse_equation(x,y,cx,cy,rx,ry)
+        (x - cx)**2/rx**2 + (y - cy)**2/ry**2
+      end
     end
 
   end
