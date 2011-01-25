@@ -10,6 +10,7 @@ Grumpiverse::Application.routes.draw do
       collection do
         get :published
         get :all
+        get :preview
       end
       member do
         get :preview

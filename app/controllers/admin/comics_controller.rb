@@ -6,6 +6,10 @@ class Admin::ComicsController < Admin::BaseController
     @scheduled_comics = Comic.scheduled
   end
   
+  def new
+    @comic = default_comic
+  end
+  
   def all
     @comics = Comic.order("updated_at desc").paginate :page => params[:page]
   end
@@ -36,6 +40,21 @@ class Admin::ComicsController < Admin::BaseController
   end
   
   def preview
-    render :text => ComicRenderer.new.render
+    comic = if params[:id]
+      Comic.find_by_id(params[:id])
+    elsif params[:comic]
+      Comic.new(params[:comic])
+    else
+      default_comic
+    end
+    
+    render :text => ComicRenderer.new(comic).render
+  end
+  
+protected
+  def default_comic
+    comic = Comic.new :left_character => Character.first
+    comic.speech_bubbles.build :words => 'Hilarious already!'
+    comic
   end
 end

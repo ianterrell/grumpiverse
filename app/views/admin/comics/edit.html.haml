@@ -1,8 +1,10 @@
 = form_for [:admin, @comic] do |f|
   = render :partial => "/admin/comics/form", :locals => { :f => f }
-  = f.submit
+  = f.submit "Save"
   = link_to "Cancel", admin_comic_path(@comic)
 
 - content_for :sidebar do
   = link_to "Back", admin_comic_path(@comic), :class => "back"
   
+%h3 Preview
+%iframe{:id => 'preview-iframe', :width => "970px", :height => "620px", :border => "0", :noborder => "noborder", :frameborder => "0", :padding => "0", :spacing => "0", :spacing => "0", :src => preview_admin_comic_path(@comic)} /

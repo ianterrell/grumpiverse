@@ -1,4 +1,3 @@
-
 jQuery(function ($) {
   $('div.flash a.close').live('click', function () {
     $(this).parent('div').fadeOut();
@@ -17,6 +16,16 @@ jQuery(function ($) {
     $.markItUp({ replaceWith:body });
     return false;
   });
+  
+  $('input#comic_height').live('change', function() {
+    newHeight = 20 + parseInt($(this).val());
+    $('#preview-iframe').attr('height', newHeight.toString() + 'px');
+  });
+  
+  $('form.edit_comic, form.new_comic').live('change', function() {
+    $('#preview-iframe').attr('src', '/admin/comics/preview?' + $(this).serialize())
+  });
+  
   
   $(document).ready(function(){
     $('.datepicker').datepicker();

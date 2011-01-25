@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110119042722) do
+ActiveRecord::Schema.define(:version => 20110125052801) do
 
   create_table "characters", :force => true do |t|
     t.string   "name"
@@ -18,14 +18,6 @@ ActiveRecord::Schema.define(:version => 20110119042722) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "characters_comics", :id => false, :force => true do |t|
-    t.integer "comic_id"
-    t.integer "character_id"
-  end
-
-  add_index "characters_comics", ["character_id"], :name => "index_articles_characters_on_character_id"
-  add_index "characters_comics", ["comic_id"], :name => "index_articles_characters_on_article_id"
 
   create_table "comics", :force => true do |t|
     t.string   "title"
@@ -39,6 +31,9 @@ ActiveRecord::Schema.define(:version => 20110119042722) do
     t.string   "rendering_content_type"
     t.integer  "rendering_file_size"
     t.datetime "rendering_updated_at"
+    t.integer  "left_character_id"
+    t.integer  "right_character_id"
+    t.integer  "height",                       :default => 600
   end
 
   create_table "delayed_jobs", :force => true do |t|
@@ -65,6 +60,18 @@ ActiveRecord::Schema.define(:version => 20110119042722) do
 
   add_index "slugs", ["name", "sluggable_type", "sequence", "scope"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
   add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
+
+  create_table "speech_bubbles", :force => true do |t|
+    t.integer  "comic_id"
+    t.string   "words",              :limit => 1024
+    t.decimal  "vertical_padding",                   :precision => 3, :scale => 2
+    t.decimal  "horizontal_padding",                 :precision => 3, :scale => 2
+    t.integer  "vertical_offset"
+    t.integer  "horizontal_offset"
+    t.integer  "tip_length"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                              :default => "", :null => false

@@ -11,3 +11,11 @@
 #header { clear: both; border-bottom: 1px solid black; padding: 20px 10px 10px 10px; }
 #sidebar { width: 400px; float: right; }
 #footer { color: #aaa; }
+
+form table { float: left; }
+form table th { text-align: right; vertical-align: top; }
+form table th.title { text-align: center; color: #999; border-bottom: 1px solid #999; }
+form table th div { float: right; }
+form table.speech { margin-left: 10px; }
+
+iframe { border-bottom: 1px solid black; }

@@ -1,6 +1,11 @@
 class Comic < ActiveRecord::Base
   belongs_to :delayed_job, :class_name => "::Delayed::Job", :foreign_key => "delayed_job_id"
-  has_and_belongs_to_many :characters
+  belongs_to :left_character, :class_name => "Character", :foreign_key => "left_character_id"
+  belongs_to :right_character, :class_name => "Character", :foreign_key => "right_character_id"
+  
+  has_many :speech_bubbles
+  accepts_nested_attributes_for :speech_bubbles
+  validates_associated :speech_bubbles
   
   has_friendly_id :title, :use_slug => true, :approximate_ascii => true, :strip_non_ascii => true
   

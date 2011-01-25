@@ -5,3 +5,6 @@
 
 - content_for :sidebar do
   = link_to "Back", admin_comics_path, :class => "back"
+
+%h3 Preview
+%iframe{:id => 'preview-iframe', :width => "970px", :height => "620px", :border => "0", :noborder => "noborder", :frameborder => "0", :padding => "0", :spacing => "0", :spacing => "0", :src => preview_admin_comics_path} /

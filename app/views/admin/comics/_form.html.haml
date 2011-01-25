@@ -1,9 +1,33 @@
-%div
-  = f.label :title
-  = f.text_field :title
-  = f.error_message_on :title
+%table
+  %tr
+    %th= f.label :title
+    %td
+      = f.text_field :title, :class => "title"
+      = f.error_message_on :title
+  %tr
+    %th= f.label :left_character_id
+    %td
+      = f.select :left_character_id, Character.all.collect{ |c| [c.name, c.id] }, :include_blank => true
+      = f.error_message_on :left_character_id
+  %tr
+    %th= f.label :right_character_id
+    %td
+      = f.select :right_character_id, Character.all.collect{ |c| [c.name, c.id] }, :include_blank => true
+      = f.error_message_on :right_character_id
+  %tr
+    %th= f.label :height
+    %td
+      = f.text_field :height
+      = f.error_message_on :height
 
-%div
-  = f.label :character_ids, "Featuring"
-  = f.select :character_ids, options_from_collection_for_select(Character.all, :id, :name, f.object.character_ids), {}, :multiple => true
-  = f.error_message_on :character_ids
+%table.speech
+  %tr
+    %th.title{:colspan => "2"} Speech Bubbles
+  = f.fields_for :speech_bubbles do |sbf|
+    %tr
+      %th= sbf.label :words
+      %td
+        = sbf.text_field :words
+        = sbf.error_message_on :words
+
+.clear

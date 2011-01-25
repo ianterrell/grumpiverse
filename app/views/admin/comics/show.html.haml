@@ -1,7 +1,4 @@
 %h2= @comic.title
-%h3
-  Featuring
-  = @comic.characters.map{|x|x.name}.join(", ")
 
 - content_for :sidebar do
   = link_to "Back", admin_comics_path, :class => "back"
